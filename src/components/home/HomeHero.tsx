@@ -8,8 +8,6 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { websiteImages } from '@/lib/images';
 import TextType from './TextType';
 
-// Multiple realistic mountain property & landscape images for the Hero slideshow
-// Desktop keeps original landscape photography; Mobile uses dedicated vertical 9:16 photography
 const heroSlides = [
   {
     src: websiteImages.hero.main.src,
@@ -114,15 +112,8 @@ export default function HomeHero() {
             </div>
           );
         })}
-
-        {/* Text-legibility gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#172033]/90 via-[#172033]/40 to-[#172033]/70 z-15 pointer-events-none" />
-        <div className="absolute inset-0 bg-black/25 z-15 pointer-events-none" />
       </motion.div>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          HERO FOREGROUND CONTENT WITH ELEGANT ENTRANCE ANIMATIONS (CENTERED)
-      ═══════════════════════════════════════════════════════════════ */}
       <div className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-28 pb-16 flex-1 flex items-center justify-center">
         <div className="max-w-4xl w-full text-white text-center flex flex-col items-center">
           {/* 1. Location Tag Badge */}

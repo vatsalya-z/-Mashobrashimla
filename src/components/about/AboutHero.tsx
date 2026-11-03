@@ -23,7 +23,7 @@ export default function AboutHero({
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full min-h-[82vh] lg:min-h-[88vh] flex flex-col justify-between overflow-hidden">
+    <section className="relative w-full min-h-[82vh] lg:min-h-[102vh] flex flex-col justify-between overflow-hidden">
       {/* ═══════════════════════════════════════════════════════════════
           SINGLE LARGE HERO IMAGE BACKGROUND WITH SUBTLE ZOOM & OVERLAY
       ═══════════════════════════════════════════════════════════════ */}
@@ -36,10 +36,6 @@ export default function AboutHero({
           sizes="100vw"
           className="object-cover object-center transform transition-transform duration-[4000ms] ease-out scale-100 hover:scale-103"
         />
-
-        {/* Text-legibility gradient overlays matching homepage */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#172033]/95 via-[#172033]/55 to-[#172033]/75 pointer-events-none" />
-        <div className="absolute inset-0 bg-black/25 pointer-events-none" />
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════
@@ -93,31 +89,7 @@ export default function AboutHero({
             Explore the charm of Mashobra, Shimla, and discover residential property opportunities surrounded by the natural beauty of the Himalayas. We help individuals and families explore property options that match their lifestyle, preferences and aspirations.
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4 mb-8"
-          >
-            <Link
-              href="/properties"
-              className="inline-flex items-center gap-2 bg-[#E07A2F] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl hover:bg-[#c96b22] hover:scale-102 active:scale-98 transition-all shadow-lg group"
-            >
-              <span>Explore Properties</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-
-            <EnquireModalButton
-              source="about-hero"
-              title="Get in Touch with our Property Specialist"
-              subtitle="Submit your requirements to receive tailored property options and guidance for Mashobra & Shimla."
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl hover:scale-102 active:scale-98 transition-all backdrop-blur-sm cursor-pointer shadow-md"
-            >
-              <span>Get in Touch</span>
-            </EnquireModalButton>
-          </motion.div>
-
+          
           {/* Trust & Reassurance Points */}
           <motion.div
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}

@@ -8,14 +8,15 @@ import {
   FaTree, 
   FaMapMarkerAlt, 
   FaHome, 
-  FaStar, 
   FaPhoneAlt 
 } from 'react-icons/fa';
+import { ArrowRight } from 'lucide-react';
 import PropertyCard from '@/components/ui/PropertyCard';
 import HomeHero from '@/components/home/HomeHero';
 import ProjectGallery from '@/components/gallery/ProjectGallery';
 import RidgeProjectSections from '@/components/home/RidgeProjectSections';
 import EnquireModalButton from '@/components/ui/EnquireModalButton';
+import FAQAccordion, { FAQItem } from '@/components/ui/FAQAccordion';
 import { 
   FadeInUp, 
   StaggerContainer, 
@@ -79,22 +80,36 @@ const locationCards = [
   { name: 'Naldehra', desc: "India's oldest golf course amid pristine Deodar forests", href: '/locations/naldehra', img: websiteImages.locations.mountainRoad.src },
 ];
 
-const faqs = [
+const faqs: FAQItem[] = [
   {
     question: 'What types of properties are available in Mashobra?',
-    answer: 'Mashobra offers luxury villas, 3 BHK and 4 BHK residential properties, second homes and premium mountain homes with Himalayan views.',
+    answer:
+      'Mashobra offers luxury villas, 3 BHK and 4 BHK residential properties, second homes, and premium mountain cottages with panoramic Himalayan views.',
   },
   {
-    question: 'How far is Mashobra from Shimla?',
-    answer: 'Mashobra is approximately 13 km from Shimla city centre, about 30–40 minutes by road.',
+    question: 'Can non-Himachalis legally buy property in Mashobra?',
+    answer:
+      'Yes. While Section 118 governs agricultural land in Himachal Pradesh, buyers from any Indian state can legally acquire built-up residential apartments and approved villas in government-sanctioned and HRERA-registered developments.',
+  },
+  {
+    question: 'How far is Mashobra from Shimla city centre?',
+    answer:
+      'Mashobra is approximately 13 km from Shimla city centre, about 30–40 minutes by road via Dhalli bypass, offering tranquil mountain seclusion with convenient urban connectivity.',
+  },
+  {
+    question: 'Can I arrange a private property site visit?',
+    answer:
+      'Yes. You can submit a site visit request through our enquiry form or WhatsApp. Our team will coordinate your on-ground visit and guide you through the property and surrounding area.',
   },
   {
     question: 'Is this the official website for The Ridge Mashobra project?',
-    answer: 'No. This is an independent real estate consultancy website. We facilitate property enquiries, site visits and buyer assistance for The Ridge Mashobra project but are not the official developer.',
+    answer:
+      'No. This is an independent real estate consultancy website. We facilitate property enquiries, site visits, and buyer assistance for The Ridge Mashobra project but are not the official developer.',
   },
   {
-    question: 'How do I enquire about a property?',
-    answer: 'You can submit an online enquiry through our form, call us directly or reach us on WhatsApp. Our property consultant will respond within 24 hours.',
+    question: 'How do I enquire about a property and get pricing details?',
+    answer:
+      'You can submit an online enquiry through our form, call us directly, or connect with us on WhatsApp. Our property consultant will respond with the latest pricing, floor plans, and availability within 24 hours.',
   },
 ];
 
@@ -389,7 +404,7 @@ export default function HomePage() {
             {blogPosts.slice(0, 3).map((post) => (
               <StaggerItem key={post.id}>
                 <AnimatedCard className="h-full">
-                  <Link href={`/blog/${post.slug}`} className="group bg-white rounded-xl border border-[#E2E8F0] overflow-hidden hover:shadow-xl transition-all duration-300 block h-full flex flex-col">
+                  <Link href="/blog" className="group bg-white rounded-xl border border-[#E2E8F0] overflow-hidden hover:shadow-xl transition-all duration-300 block h-full flex flex-col">
                     <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                       <Image
                         src={post.image}
@@ -426,45 +441,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 10. FAQ */}
-      <section className="py-16 bg-white">
+      {/* 10. FAQ SECTION */}
+      <section className="py-16 lg:py-20 bg-[#F1F5F9]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <FadeInUp>
-            <div className="text-center max-w-2xl mx-auto mb-10">
-              <span className="text-[#E07A2F] text-sm font-semibold uppercase tracking-wider">Frequently Asked Questions</span>
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+              <span className="text-[#E07A2F] text-sm font-semibold uppercase tracking-wider">
+                Frequently Asked Questions
+              </span>
               <h2
                 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#172033] mt-2 mb-3"
                 style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}
               >
                 Frequently Asked Questions
               </h2>
-              <p className="text-[#64748B] text-sm sm:text-base">
-                Find answers to common questions about properties, legal verification, and purchasing in Mashobra.
+              <p className="text-[#64748B] text-sm sm:text-base leading-relaxed">
+                Find clear answers regarding property discovery, locations covered, site visits, and purchasing in Mashobra.
               </p>
             </div>
           </FadeInUp>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
-            {faqs.map((faq) => (
-              <StaggerItem key={faq.question} className="h-full">
-                <div className="bg-[#F1F5F9] rounded-xl p-4 sm:p-5 hover:bg-[#EDF2F7] transition-colors h-full flex flex-col justify-start">
-                  <h3 className="font-semibold text-[#172033] text-sm sm:text-base mb-2 flex items-start gap-2">
-                    <FaStar className="text-[#E07A2F] text-xs flex-shrink-0 mt-1" />
-                    <span>{faq.question}</span>
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed pl-5">{faq.answer}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
 
-          {/* Centered View All Button Below Section */}
-          <div className="mt-10 text-center flex justify-center">
+          <FadeInUp delay={0.15}>
+            <FAQAccordion faqs={faqs} />
+          </FadeInUp>
+
+          <div className="mt-10 sm:mt-12 text-center flex justify-center">
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl hover:bg-[#162d4a] transition-all shadow-md hover:shadow-lg group"
+              className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl hover:bg-[#162d4a] transition-all shadow-sm hover:shadow-md group"
             >
-              <span>View All FAQs &amp; Inquiries</span>
-              <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
+              <span>Have Additional Questions? Contact Us</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>

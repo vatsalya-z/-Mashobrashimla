@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -80,16 +81,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 lg:h-18">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
-              <div className="w-8 h-8 bg-[#1E3A5F] rounded flex items-center justify-center transition-transform group-hover:scale-105">
-                <span className="text-white font-bold text-sm">TR</span>
-              </div>
-              <div className="leading-tight">
-                <div className="text-[#1E3A5F] font-bold text-sm leading-none" style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}>
-                  The Ridge
-                </div>
-                <div className="text-[#64748B] text-xs leading-none">Mashobra, Shimla</div>
-              </div>
+            <Link href="/" className="flex items-center flex-shrink-0 group py-1">
+              <Image
+                src="/images/logo.png"
+                alt="The House of Abhinandan Lodha"
+                width={160}
+                height={95}
+                priority
+                className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-102"
+              />
             </Link>
 
             {/* Desktop Nav */}

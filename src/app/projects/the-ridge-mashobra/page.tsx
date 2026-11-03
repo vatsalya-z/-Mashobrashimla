@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { FaCheckCircle, FaMapMarkerAlt, FaWhatsapp, FaExclamationTriangle } from 'react-icons/fa';
 import EnquiryForm from '@/components/forms/EnquiryForm';
 import ProjectGallery from '@/components/gallery/ProjectGallery';
+import FAQAccordion from '@/components/ui/FAQAccordion';
 import { properties } from '@/lib/data/properties';
 import { websiteImages } from '@/lib/images';
 import JsonLd, { breadcrumbSchema, faqSchema } from '@/components/seo/JsonLd';
@@ -190,14 +191,7 @@ export default function TheRidgeMashobra() {
               <h2 className="text-xl font-bold text-[#172033] mb-4" style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}>
                 Frequently Asked Questions
               </h2>
-              <div className="space-y-4">
-                {faqs.map((faq) => (
-                  <div key={faq.question} className="bg-[#F1F5F9] rounded-xl p-5">
-                    <h3 className="font-semibold text-[#172033] mb-2 text-sm">{faq.question}</h3>
-                    <p className="text-sm text-[#64748B] leading-relaxed">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
 

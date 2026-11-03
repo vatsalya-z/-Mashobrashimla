@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { FaMapMarkerAlt, FaHome, FaCheckCircle, FaWhatsapp, FaExclamationTriangle, FaArrowRight } from 'react-icons/fa';
 import { properties, getPropertyBySlug } from '@/lib/data/properties';
 import EnquiryForm from '@/components/forms/EnquiryForm';
+import FAQAccordion from '@/components/ui/FAQAccordion';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import JsonLd, { breadcrumbSchema, faqSchema } from '@/components/seo/JsonLd';
 
@@ -183,14 +184,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                 <h2 className="font-bold text-[#172033] text-lg mb-4" style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}>
                   Frequently Asked Questions
                 </h2>
-                <div className="space-y-4">
-                  {property.faqs.map((faq) => (
-                    <div key={faq.question} className="bg-[#F1F5F9] rounded-xl p-5">
-                      <h3 className="font-semibold text-[#172033] mb-2 text-sm">{faq.question}</h3>
-                      <p className="text-sm text-[#64748B] leading-relaxed">{faq.answer}</p>
-                    </div>
-                  ))}
-                </div>
+                <FAQAccordion faqs={property.faqs} />
               </div>
             )}
           </div>

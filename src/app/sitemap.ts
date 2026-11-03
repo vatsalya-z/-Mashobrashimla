@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next';
 import { properties } from '@/lib/data/properties';
 import { locations } from '@/lib/data/locations';
-import { blogPosts } from '@/lib/data/blog';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://mashobrashimla.com';
 
@@ -51,13 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const blogRoutes = blogPosts.map((b) => ({
-    url: `${SITE_URL}/blog/${b.slug}`,
-    lastModified: new Date(b.publishedAt),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
-
-  return [...staticRoutes, ...propertyRoutes, ...locationRoutes, ...blogRoutes];
+  return [...staticRoutes, ...propertyRoutes, ...locationRoutes];
 }
 

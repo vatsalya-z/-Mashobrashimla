@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   FaPhoneAlt, 
   FaEnvelope, 
@@ -68,13 +69,15 @@ export default function Footer() {
               LEFT SIDE: BRAND, DETAILS & CONTACT INFO
           ═══════════════════════════════════════════════════════════ */}
           <div className="md:col-span-5 lg:col-span-4">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-white rounded flex items-center justify-center">
-                <span className="text-[#1E3A5F] font-bold text-sm">TR</span>
-              </div>
-              <div>
-                <div className="text-white font-bold text-base leading-none">The Ridge Mashobra</div>
-                <div className="text-white/60 text-xs">Shimla, Himachal Pradesh</div>
+            <Link href="/" className="inline-block mb-5 group">
+              <div className="bg-white px-3.5 py-2 rounded-xl inline-flex items-center shadow-md transition-transform group-hover:scale-102">
+                <Image
+                  src="/images/logo.png"
+                  alt="The House of Abhinandan Lodha"
+                  width={160}
+                  height={95}
+                  className="h-10 sm:h-12 w-auto object-contain"
+                />
               </div>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-sm">
