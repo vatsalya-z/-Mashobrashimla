@@ -146,45 +146,303 @@ export const websiteImages = {
 
   // D. LOCATION COLLECTION
   locations: {
+    // New organized location assets
+    mashobra: {
+      src: '/images/locations/mashobra/mashobra-luxury-mountain-villa-01.webp',
+      alt: 'Luxury mountain villa in Mashobra surrounded by deodar pine forests and Himalayan peaks',
+      title: 'Mashobra Luxury Mountain Villa',
+      villa1: {
+        src: '/images/locations/mashobra/mashobra-luxury-mountain-villa-01.webp',
+        alt: 'Luxury mountain villa in Mashobra surrounded by deodar pine forests and Himalayan peaks',
+        title: 'Mashobra Luxury Mountain Villa',
+      },
+      valleyView: {
+        src: '/images/locations/mashobra/mashobra-himalayan-valley-view-02.webp',
+        alt: 'Expansive panoramic Himalayan mountain valley view from Mashobra',
+        title: 'Himalayan Valley View',
+      },
+      hillsideResidence: {
+        src: '/images/locations/mashobra/mashobra-hillside-residence-03.webp',
+        alt: 'Hillside mountain residence in Mashobra with slate stone and cedar wood architecture',
+        title: 'Mashobra Hillside Residence',
+      },
+      forestRoad: {
+        src: '/images/locations/mashobra/mashobra-scenic-forest-road-04.webp',
+        alt: 'Scenic winding mountain road lined with deodar trees in Mashobra',
+        title: 'Scenic Mashobra Forest Road',
+      },
+      mountainCottage: {
+        src: '/images/locations/mashobra/mashobra-mountain-cottage-05.webp',
+        alt: 'Authentic mountain cottage in Mashobra with slate roof and alpine garden',
+        title: 'Mashobra Mountain Cottage',
+      },
+      deodarReserve: {
+        src: '/images/locations/mashobra/mashobra-deodar-reserve-06.webp',
+        alt: 'Ancient virgin Deodar cedar forest canopy in Craignano Nature Reserve',
+        title: 'Craignano Deodar Forest Reserve',
+      },
+      ridgeEstate: {
+        src: '/images/locations/mashobra/mashobra-panoramic-ridge-estate-07.webp',
+        alt: 'Exclusive luxury ridge estate in Mashobra overlooking deep valleys',
+        title: 'Panoramic Ridge Estate',
+      },
+      chalet: {
+        src: '/images/locations/mashobra/mashobra-contemporary-chalet-08.webp',
+        alt: 'Contemporary hillside chalet villa in Mashobra with floor-to-ceiling windows',
+        title: 'Contemporary Mountain Chalet',
+      },
+    },
+
+    shimla: {
+      src: '/images/locations/shimla/shimla-modern-hill-house-01.webp',
+      alt: 'Modern luxury hillside house in Shimla with panoramic Himalayan views',
+      title: 'Shimla Modern Hillside Residence',
+      modernHillHouse: {
+        src: '/images/locations/shimla/shimla-modern-hill-house-01.webp',
+        alt: 'Modern luxury hillside house in Shimla with panoramic Himalayan views',
+        title: 'Shimla Modern Hillside Residence',
+      },
+      heritageResidence: {
+        src: '/images/locations/shimla/shimla-heritage-mountain-residence-02.webp',
+        alt: 'Classic Shimla hill-station mountain residence with stone masonry and gables',
+        title: 'Shimla Heritage Mountain Residence',
+      },
+      valleyPanorama: {
+        src: '/images/locations/shimla/shimla-valley-panorama-03.webp',
+        alt: 'Scenic Shimla hill town landscape and misty Himalayan valley panorama',
+        title: 'Shimla Hill-Town Panorama',
+      },
+      contemporaryVilla: {
+        src: '/images/locations/shimla/shimla-contemporary-villa-04.webp',
+        alt: 'Contemporary luxury mountain villa in Shimla overlooking pine slopes',
+        title: 'Shimla Contemporary Mountain Villa',
+      },
+      greenSlopes: {
+        src: '/images/locations/shimla/shimla-green-mountain-slopes-05.webp',
+        alt: 'Lush green mountain surroundings and terraced pine hills in Shimla',
+        title: 'Shimla Green Mountain Slopes',
+      },
+      residentialEnclave: {
+        src: '/images/locations/shimla/shimla-hillside-residential-enclave-06.webp',
+        alt: 'Upscale hillside residential enclave in Shimla among deodar pines',
+        title: 'Shimla Hillside Residential Enclave',
+      },
+    },
+
+    kufri: {
+      src: '/images/locations/kufri/kufri-mountain-cottage-01.webp',
+      alt: 'Alpine mountain cottage in Kufri with steep gabled roof and pine forest surroundings',
+      title: 'Kufri Alpine Heights',
+      mountainCottage: {
+        src: '/images/locations/kufri/kufri-mountain-cottage-01.webp',
+        alt: 'Alpine mountain cottage in Kufri with steep gabled roof and pine forest surroundings',
+        title: 'Kufri Alpine Mountain Cottage',
+      },
+      hillsideVilla: {
+        src: '/images/locations/kufri/kufri-hillside-villa-02.webp',
+        alt: 'Premium high-altitude hillside villa in Kufri overlooking snowy peaks',
+        title: 'Kufri Hillside Villa',
+      },
+      pineForest: {
+        src: '/images/locations/kufri/kufri-pine-forest-landscape-03.webp',
+        alt: 'Dense Himalayan pine and spruce forest landscape on Kufri ridges',
+        title: 'Kufri Pine Forest Landscape',
+      },
+      alpineRidgeResidence: {
+        src: '/images/locations/kufri/kufri-alpine-ridge-residence-04.webp',
+        alt: 'Luxury alpine ridge residence in Kufri with panoramic mountain views',
+        title: 'Kufri Alpine Ridge Residence',
+      },
+      seasonalScenery: {
+        src: '/images/locations/kufri/kufri-seasonal-mountain-scenery-05.webp',
+        alt: 'Scenic seasonal alpine mountain meadows and rolling hills in Kufri',
+        title: 'Kufri Mountain Scenery',
+      },
+      luxuryChalet: {
+        src: '/images/locations/kufri/kufri-luxury-chalet-06.webp',
+        alt: 'Luxury alpine timber-and-stone chalet retreat in Kufri',
+        title: 'Kufri Luxury Alpine Chalet',
+      },
+    },
+
+    naldehra: {
+      src: '/images/locations/naldehra/naldehra-luxury-residence-01.webp',
+      alt: 'Exclusive luxury mountain residence in Naldehra overlooking cedar glades',
+      title: 'Naldehra Cedar Meadows',
+      luxuryResidence: {
+        src: '/images/locations/naldehra/naldehra-luxury-residence-01.webp',
+        alt: 'Exclusive luxury mountain residence in Naldehra overlooking cedar glades',
+        title: 'Naldehra Luxury Mountain Residence',
+      },
+      deodarForest: {
+        src: '/images/locations/naldehra/naldehra-deodar-forest-landscape-02.webp',
+        alt: 'Ancient deodar cedar forest landscape and rolling green knolls of Naldehra',
+        title: 'Naldehra Deodar Cedar Groves',
+      },
+      hillsideVilla: {
+        src: '/images/locations/naldehra/naldehra-hillside-villa-03.webp',
+        alt: 'Premium hillside villa nestled among rolling green cedar hills in Naldehra',
+        title: 'Naldehra Hillside Villa',
+      },
+      mountainProperty: {
+        src: '/images/locations/naldehra/naldehra-scenic-mountain-property-04.webp',
+        alt: 'Scenic mountain property with viewing deck in Naldehra',
+        title: 'Naldehra Scenic Mountain Property',
+      },
+      cedarGrove: {
+        src: '/images/locations/naldehra/naldehra-peaceful-cedar-grove-05.webp',
+        alt: 'Peaceful natural cedar grove sanctuary with stone walking paths in Naldehra',
+        title: 'Naldehra Cedar Sanctuary',
+      },
+      boutiqueEstate: {
+        src: '/images/locations/naldehra/naldehra-boutique-villa-estate-06.webp',
+        alt: 'Boutique residential estate in Naldehra surrounded by historic cedar trees',
+        title: 'Naldehra Boutique Villa Estate',
+      },
+    },
+
+    // Legacy aliases for backward compatibility
     mashobraForest: {
-      src: '/images/locations/mashobra-deodar-forest.webp',
+      src: '/images/locations/mashobra/mashobra-deodar-reserve-06.webp',
       alt: 'Dense Deodar cedar forest canopy in Mashobra with natural sunlight filtering through trees',
       title: 'Mashobra Deodar Reserve',
     },
     himalayanValley: {
-      src: '/images/locations/himalayan-valley.webp',
+      src: '/images/locations/mashobra/mashobra-himalayan-valley-view-02.webp',
       alt: 'Layered mountain ridges and panoramic Himalayan valley landscape in Himachal Pradesh',
       title: 'Panoramic Himalayan Vista',
     },
     mountainResidential: {
-      src: '/images/locations/mountain-residential-view.webp',
+      src: '/images/locations/mashobra/mashobra-hillside-residence-03.webp',
       alt: 'Scenic mountain residential neighborhood nestled gracefully into green slopes of Mashobra',
       title: 'Mashobra Ridge Enclave',
     },
     shimlaMorning: {
-      src: '/images/locations/shimla-morning.webp',
+      src: '/images/locations/shimla/shimla-modern-hill-house-01.webp',
       alt: 'Misty sunrise over the historic pine-covered ridges of Shimla hills',
       title: 'Shimla Morning Panorama',
     },
     pineForest: {
-      src: '/images/locations/pine-forest-hills.webp',
+      src: '/images/locations/kufri/kufri-pine-forest-landscape-03.webp',
       alt: 'Pristine emerald pine and oak forest hills under clear mountain skies',
       title: 'Alpine Forest Trail',
     },
     mountainRoad: {
-      src: '/images/locations/mountain-road.webp',
+      src: '/images/locations/mashobra/mashobra-scenic-forest-road-04.webp',
       alt: 'Scenic winding mountain road lined with ancient deodars in Mashobra',
       title: 'Mashobra Forest Road',
     },
-    kufri: {
-      src: '/images/locations/kufri-hero.jpg',
-      alt: 'Alpine scenery and mountain ridges of Kufri near Shimla',
-      title: 'Kufri Alpine Heights',
-    },
-    naldehra: {
-      src: '/images/locations/naldehra-hero.jpg',
-      alt: 'Historic cedar groves and rolling meadows of Naldehra',
-      title: 'Naldehra Cedar Meadows',
+  },
+
+  // D2. ORGANIZED PROPERTIES COLLECTION
+  propertyAssets: {
+    villas: [
+      {
+        src: '/images/properties/villas/luxury-villa-exterior-01.webp',
+        alt: 'Modern luxury mountain villa with natural stone masonry, cedar timber deck, and panoramic Himalayan vistas',
+        title: 'The Ridge Signature Residence',
+      },
+      {
+        src: '/images/properties/villas/luxury-villa-exterior-02.webp',
+        alt: 'Contemporary Himalayan villa in Mashobra featuring natural slate stone masonry and cedar accents',
+        title: 'Cedar Crest Luxury Villa',
+      },
+      {
+        src: '/images/properties/villas/luxury-villa-exterior-03.webp',
+        alt: 'Modern wooden mountain villa with expansive wrap-around balconies and forest views',
+        title: 'Highland Slope Villa',
+      },
+      {
+        src: '/images/properties/villas/luxury-villa-exterior-04.webp',
+        alt: 'Multi-level luxury villa on a sloping mountain plot with cascading landscaped stone terraces',
+        title: 'Valley Vista Mountain Residence',
+      },
+      {
+        src: '/images/properties/villas/luxury-villa-exterior-05.webp',
+        alt: 'Minimalist luxury glass-fronted mountain villa in Mashobra with floor-to-ceiling valley windows',
+        title: 'Grand Pinnacle Villa',
+      },
+    ],
+    cottages: [
+      {
+        src: '/images/properties/cottages/mountain-cottage-exterior-01.webp',
+        alt: 'Himachali-inspired stone and timber cottage with handcrafted wooden eaves and slate roof',
+        title: 'Alpine Cedar Cottage',
+      },
+      {
+        src: '/images/properties/cottages/mountain-cottage-exterior-02.webp',
+        alt: 'Charming luxury hillside cottage with stone chimney and garden patio overlooking misty ridges',
+        title: 'Pine Crest Mountain Home',
+      },
+      {
+        src: '/images/properties/cottages/mountain-cottage-exterior-03.webp',
+        alt: 'Contemporary alpine cottage with wooden pergola, surrounded by pine and oak trees',
+        title: 'The Orchard Cottage Retreat',
+      },
+      {
+        src: '/images/properties/cottages/mountain-cottage-exterior-04.webp',
+        alt: 'Rustic-modern mountain chalet cottage with fieldstone foundation and valley views',
+        title: 'Wildflower Alpine Cottage',
+      },
+    ],
+    luxuryHomes: [
+      {
+        src: '/images/properties/luxury-homes/luxury-mountain-estate-01.webp',
+        alt: 'Expansive mountain luxury estate with slate roofs and landscaped stone viewing decks',
+        title: 'Grand Summit Mountain Estate',
+      },
+      {
+        src: '/images/properties/luxury-homes/luxury-mountain-estate-02.webp',
+        alt: 'Modern hillside luxury mansion with manicured alpine gardens and panoramic valley orientation',
+        title: 'Stonegate Alpine Chateau',
+      },
+      {
+        src: '/images/properties/luxury-homes/luxury-mountain-estate-03.webp',
+        alt: 'Premium multi-generational family mountain residence in deodar forest',
+        title: 'Serene Ridge Sanctuary',
+      },
+      {
+        src: '/images/properties/luxury-homes/luxury-mountain-estate-04.webp',
+        alt: 'Hillside residence with outdoor sunset terrace lounge framing mountain peaks',
+        title: 'Sunset Terrace Estate',
+      },
+      {
+        src: '/images/properties/luxury-homes/luxury-mountain-estate-05.webp',
+        alt: 'Sun-drenched mountain estate with reading nook and expansive grounds',
+        title: 'Highland Haven Residence',
+      },
+    ],
+    interiors: {
+      livingRoom: {
+        src: '/images/properties/interiors/modern-mountain-living-room-01.webp',
+        alt: 'Modern luxury living room in Mashobra villa with natural stone fireplace and panoramic mountain windows',
+        title: 'Panoramic Living Lounge',
+      },
+      bedroom: {
+        src: '/images/properties/interiors/luxury-mountain-bedroom-01.webp',
+        alt: 'Premium master bedroom with natural timber ceiling beams, plush bedding, and private valley balcony',
+        title: 'Master Bedroom Suite',
+      },
+      kitchen: {
+        src: '/images/properties/interiors/modern-mountain-kitchen-01.webp',
+        alt: 'Open-concept modular kitchen with quartz waterfall island and wood cabinetry overlooking forest',
+        title: 'Modern Modular Kitchen',
+      },
+      dining: {
+        src: '/images/properties/interiors/mountain-view-dining-room-01.webp',
+        alt: 'Formal dining room in mountain villa featuring solid walnut dining table and expansive forest view',
+        title: 'Formal Dining Area',
+      },
+      bathroom: {
+        src: '/images/properties/interiors/luxury-mountain-bathroom-01.webp',
+        alt: 'Spa-style en-suite bathroom with natural slate stone tiles and freestanding tub overlooking trees',
+        title: 'En-suite Luxury Bathroom',
+      },
+      balcony: {
+        src: '/images/properties/interiors/mountain-villa-balcony-view-01.webp',
+        alt: 'Spacious cedar wood viewing deck balcony with outdoor lounge chairs overlooking pine forest',
+        title: 'Private Mountain Balcony',
+      },
     },
   },
 

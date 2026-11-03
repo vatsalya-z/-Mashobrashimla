@@ -18,8 +18,9 @@ export default function PrivacyPolicyPage() {
         ])}
       />
 
-      <div className="bg-[#1E3A5F] py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* HERO BANNER */}
+      <section className="relative w-full bg-[#1E3A5F] py-14 sm:py-16">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6">
           <div className="mb-4">
             <Breadcrumb items={[{ label: 'Privacy Policy' }]} />
           </div>
@@ -28,7 +29,7 @@ export default function PrivacyPolicyPage() {
           </h1>
           <p className="text-white/70 mt-2 text-sm">Last updated: November 2026</p>
         </div>
-      </div>
+      </section>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
         <div className="bg-white rounded-xl border border-[#E2E8F0] p-6 sm:p-10 space-y-6 text-sm text-[#64748B] leading-relaxed">

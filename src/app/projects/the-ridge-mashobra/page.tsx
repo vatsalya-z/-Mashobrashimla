@@ -2,7 +2,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaCheckCircle, FaMapMarkerAlt, FaWhatsapp, FaExclamationTriangle } from 'react-icons/fa';
+import { FaCheckCircle, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
 import EnquiryForm from '@/components/forms/EnquiryForm';
 import ProjectGallery from '@/components/gallery/ProjectGallery';
 import FAQAccordion from '@/components/ui/FAQAccordion';
@@ -61,47 +61,35 @@ export default function TheRidgeMashobra() {
         ]}
       />
 
-      {/* Disclaimer Bar */}
-      <div className="bg-amber-50 border-b border-amber-200 py-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-2 text-xs text-amber-800">
-          <FaExclamationTriangle className="text-xs flex-shrink-0" />
-          <span>
-            <strong>Independent Consultancy Website:</strong> This is not the official developer website for The Ridge Mashobra. We are an independent property consultancy facilitating enquiries.
-          </span>
-        </div>
-      </div>
-
       {/* Hero */}
-      <div className="relative h-80 sm:h-[480px] overflow-hidden">
+      <section className="relative w-full min-h-[440px] sm:min-h-[500px] flex items-center justify-center overflow-hidden">
         <Image
           src={websiteImages.banners.projectPanorama.src}
           alt={websiteImages.banners.projectPanorama.alt}
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#172033]/80 via-[#172033]/40 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-8 sm:pb-12">
-            <div className="max-w-lg">
-              <span className="inline-block bg-[#E07A2F] text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                Mashobra · Shimla
-              </span>
-              <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}>
-                The Ridge Mashobra
-              </h1>
-              <p className="text-white/80 text-base">Luxury Villas in the Deodar Forests of Mashobra</p>
-              <div className="flex flex-wrap gap-3 mt-4">
-                <div className="bg-white/20 text-white text-xs px-3 py-1.5 rounded-full">3 BHK</div>
-                <div className="bg-white/20 text-white text-xs px-3 py-1.5 rounded-full">4 BHK</div>
-                <div className="bg-white/20 text-white text-xs px-3 py-1.5 rounded-full">Mashobra, Shimla</div>
-                <div className="bg-white/20 text-white text-xs px-3 py-1.5 rounded-full">Price on Request</div>
-              </div>
-            </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#1E3A5F]/80 to-[#0f172a]/75" />
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center">
+          <span className="inline-block bg-[#E07A2F] text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">
+            Mashobra · Shimla
+          </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3" style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}>
+            The Ridge Mashobra
+          </h1>
+          <p className="text-white/85 text-base sm:text-lg max-w-2xl mx-auto mb-6 font-light leading-relaxed">
+            Luxury Villas in the Deodar Forests of Mashobra
+          </p>
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3">
+            <div className="bg-white/20 text-white text-xs px-3.5 py-1.5 rounded-full backdrop-blur-xs border border-white/20 font-medium">3 BHK</div>
+            <div className="bg-white/20 text-white text-xs px-3.5 py-1.5 rounded-full backdrop-blur-xs border border-white/20 font-medium">4 BHK</div>
+            <div className="bg-white/20 text-white text-xs px-3.5 py-1.5 rounded-full backdrop-blur-xs border border-white/20 font-medium">Mashobra, Shimla</div>
+            <div className="bg-[#E07A2F] text-white text-xs px-3.5 py-1.5 rounded-full font-semibold shadow-xs">Price on Request</div>
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">

@@ -1,12 +1,14 @@
 import { MetadataRoute } from 'next';
 import { properties } from '@/lib/data/properties';
 import { locations } from '@/lib/data/locations';
+import { blogPosts } from '@/lib/data/blog';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://mashobrashimla.com';
+const SITE_URL = 'https://mashobrashimla.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
+    '/the-ridge-mashobra',
     '/about-us',
     '/properties',
     '/locations',
@@ -32,8 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
-    changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
-    priority: route === '' ? 1.0 : route.startsWith('/properties') || route.startsWith('/luxury') ? 0.9 : 0.7,
+    changeFrequency: (route === '' || route === '/the-ridge-mashobra' ? 'daily' : 'weekly') as 'daily' | 'weekly',
+    priority: route === '' || route === '/the-ridge-mashobra' ? 1.0 : route.startsWith('/properties') || route.startsWith('/luxury') ? 0.9 : 0.7,
   }));
 
   const propertyRoutes = properties.map((p) => ({
@@ -47,9 +49,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/locations/${l.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: 0.85,
   }));
 
-  return [...staticRoutes, ...propertyRoutes, ...locationRoutes];
+  const blogRoutes = blogPosts.map((b) => ({
+    url: `${SITE_URL}/blog/${b.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...propertyRoutes, ...locationRoutes, ...blogRoutes];
 }
 

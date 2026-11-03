@@ -1,5 +1,7 @@
 // src/app/enquire-now/page.tsx
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import EnquiryForm from '@/components/forms/EnquiryForm';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import JsonLd from '@/components/seo/JsonLd';
@@ -26,11 +28,41 @@ export default function EnquireNowPage() {
         ])}
       />
 
-      <div className="bg-[#F1F5F9] py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <Breadcrumb items={[{ label: 'Enquire Now' }]} />
+      {/* 1. FULL WIDTH HERO SECTION */}
+      <section className="relative w-full min-h-[380px] sm:min-h-[440px] flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/hero/hero-mountain-villa.webp"
+          alt="Luxury mountain villa enquiry in Mashobra, Shimla"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#1E3A5F]/85 to-[#0f172a]/75" />
+
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 py-16 text-center flex flex-col items-center">
+          <nav aria-label="Breadcrumb" className="inline-flex items-center gap-2 text-xs sm:text-sm text-white/70 mb-4 bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-xs border border-white/10">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-white/40">/</span>
+            <span className="text-[#E07A2F] font-semibold">Enquire Now</span>
+          </nav>
+
+          <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2">
+            Direct Developer &amp; Advisory Channel
+          </span>
+
+          <h1
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3"
+            style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}
+          >
+            Property Enquiry &amp; Consultation
+          </h1>
+
+          <p className="text-white/85 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+            Connect directly with our mountain real estate specialists to receive verified brochures, pricing schedules, and private on-ground site visit coordination.
+          </p>
         </div>
-      </div>
+      </section>
 
       <section className="py-12 lg:py-16 bg-[#F1F5F9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

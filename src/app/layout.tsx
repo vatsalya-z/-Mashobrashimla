@@ -24,21 +24,23 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://mashobrashimla.com'),
   title: {
-    default: 'The Ridge Mashobra, Shimla – Luxury Villas & Premium Properties',
+    default: 'The Ridge Mashobra, Shimla | Premium Property Opportunities',
     template: '%s | The Ridge Mashobra, Shimla',
   },
   description:
-    'Explore premium luxury villas and residential properties in Mashobra, Shimla, Himachal Pradesh. 3 BHK and 4 BHK mountain homes with Himalayan views. Enquire now.',
+    'Explore property opportunities in Mashobra, Shimla, Kufri and Naldehra. Discover mountain properties and get in touch for property enquiries.',
   keywords: [
+    'The Ridge Mashobra',
+    'Properties in Mashobra',
+    'Real estate in Mashobra',
+    'Properties in Shimla',
+    'Luxury properties in Shimla',
     'luxury villas Mashobra',
     'property in Mashobra Shimla',
     'villas for sale Mashobra',
-    'luxury property Shimla',
     '3 BHK villas Mashobra',
     '4 BHK villas Mashobra',
-    'The Ridge Mashobra',
-    'premium mountain homes Himachal Pradesh',
-    'second homes Shimla',
+    'The Ridge Mashobra project',
     'holiday homes Himachal Pradesh',
   ],
   openGraph: {
@@ -53,6 +55,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
 };
 

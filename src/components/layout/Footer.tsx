@@ -25,7 +25,7 @@ const footerLinks = {
     { label: 'Enquire Now', href: '/enquire-now' },
   ],
   properties: [
-    { label: 'The Ridge Mashobra', href: '/projects/the-ridge-mashobra' },
+    { label: 'The Ridge Mashobra', href: '/the-ridge-mashobra' },
     { label: 'Luxury Villas Mashobra', href: '/luxury-villas-mashobra' },
     { label: '3 BHK Villas Mashobra', href: '/3-bhk-villas-mashobra' },
     { label: '4 BHK Villas Mashobra', href: '/4-bhk-villas-mashobra' },

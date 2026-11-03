@@ -39,37 +39,41 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           alt={`${property.title} – ${property.location}`}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 640px) 50vw, (max-width: 1200px) 50vw, 33vw"
         />
         {/* Status badge */}
         <span
-          className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-sm shadow-sm ${statusColors[property.status]}`}
+          className={`absolute top-2 left-2 sm:top-3 sm:left-3 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-semibold backdrop-blur-sm shadow-xs ${statusColors[property.status]}`}
         >
           {statusLabels[property.status]}
+        </span>
+        {/* Type badge */}
+        <span className="absolute top-2 right-2 sm:top-3 sm:right-3 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-semibold bg-[#1E3A5F]/85 text-white backdrop-blur-sm shadow-xs capitalize">
+          {property.type}
         </span>
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col flex-1 justify-between">
+      <div className="p-2.5 sm:p-5 flex flex-col flex-1 justify-between">
         <div>
-          <h3 className="font-semibold text-[#172033] text-base mb-1 line-clamp-2 group-hover:text-[#1E3A5F] transition-colors">
+          <h3 className="font-bold text-[#172033] text-xs sm:text-base mb-1 line-clamp-2 group-hover:text-[#1E3A5F] transition-colors leading-tight sm:leading-snug" style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}>
             {property.title}
           </h3>
 
-          <div className="flex items-center gap-1.5 text-[#64748B] text-sm mb-2">
-            <FaMapMarkerAlt className="text-xs text-[#E07A2F] flex-shrink-0" />
-            <span>{property.location}</span>
+          <div className="flex items-center gap-1 sm:gap-1.5 text-[#64748B] text-[10px] sm:text-sm mb-1">
+            <FaMapMarkerAlt className="text-[9px] sm:text-xs text-[#E07A2F] flex-shrink-0" />
+            <span className="line-clamp-1">{property.location}</span>
           </div>
 
-          <div className="flex items-center gap-1.5 text-[#64748B] text-sm mb-3">
-            <FaHome className="text-xs text-[#1E3A5F] flex-shrink-0" />
+          <div className="flex items-center gap-1 sm:gap-1.5 text-[#64748B] text-[10px] sm:text-sm mb-2">
+            <FaHome className="text-[9px] sm:text-xs text-[#1E3A5F] flex-shrink-0" />
             <span>{property.configuration}</span>
           </div>
 
-          {/* Highlights */}
-          <div className="mb-4 space-y-1">
+          {/* Highlights (visible on larger screens) */}
+          <div className="hidden sm:block mb-3 space-y-1">
             {property.highlights.slice(0, 2).map((h) => (
-              <div key={h} className="flex items-center gap-1.5 text-xs text-[#64748B]">
+              <div key={h} className="flex items-center gap-1.5 text-xs text-[#64748B] line-clamp-1">
                 <span className="w-1.5 h-1.5 bg-[#E07A2F] rounded-full flex-shrink-0" />
                 <span>{h}</span>
               </div>
@@ -80,22 +84,22 @@ export default function PropertyCard({ property }: PropertyCardProps) {
         <div>
           {/* Price */}
           {property.price && (
-            <div className="mb-4 pt-2 border-t border-[#F1F5F9]">
-              <span className="text-[#1E3A5F] font-bold text-sm">{property.price}</span>
-              {property.priceNote && (
-                <p className="text-xs text-[#64748B] mt-0.5">{property.priceNote}</p>
+            <div className="mb-2 sm:mb-3 pt-2 border-t border-[#F1F5F9] flex items-baseline justify-between">
+              <span className="text-[#1E3A5F] font-bold text-xs sm:text-sm">{property.price}</span>
+              {property.status === 'limited' && (
+                <span className="text-[9px] sm:text-[10px] text-[#E07A2F] font-semibold">Limited</span>
               )}
             </div>
           )}
 
           {/* Actions */}
-          <div className="flex gap-2 pt-1">
+          <div className="flex flex-col sm:flex-row gap-1.5 sm:gap-2 pt-1">
             <Link
               href={`/properties/${property.slug}`}
-              className="flex-1 flex items-center justify-center gap-1.5 border border-[#1E3A5F] text-[#1E3A5F] text-sm font-medium py-2 rounded hover:bg-[#1E3A5F] hover:text-white transition-all duration-200 group/btn"
+              className="flex-1 flex items-center justify-center gap-1 border border-[#1E3A5F] text-[#1E3A5F] text-[10px] sm:text-sm font-semibold py-1.5 sm:py-2 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition-all duration-200 group/btn"
             >
               <span>View Details</span>
-              <FaArrowRight className="text-xs group-hover/btn:translate-x-1 transition-transform duration-200" />
+              <FaArrowRight className="text-[8px] sm:text-xs group-hover/btn:translate-x-1 transition-transform duration-200" />
             </Link>
             <button
               type="button"
@@ -107,9 +111,9 @@ export default function PropertyCard({ property }: PropertyCardProps) {
                   source: `property-card-${property.slug}`,
                 })
               }
-              className="bg-[#E07A2F] text-white text-sm font-medium px-4 py-2 rounded hover:bg-[#c96b22] active:scale-95 transition-all duration-200 cursor-pointer shadow-sm"
+              className="bg-[#E07A2F] text-white text-[10px] sm:text-sm font-semibold px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-[#c96b22] active:scale-95 transition-all duration-200 cursor-pointer shadow-xs text-center"
             >
-              Enquire
+              Enquire Now
             </button>
           </div>
         </div>

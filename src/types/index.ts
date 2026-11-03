@@ -73,17 +73,62 @@ export interface EnquiryData {
   submittedAt?: string;
 }
 
+export interface LocationConnectivityItem {
+  destination: string;
+  distance: string;
+  travelTime: string;
+  route?: string;
+}
+
+export interface LocationAttraction {
+  name: string;
+  description: string;
+  distance?: string;
+  image?: string;
+}
+
+export interface LocationPropertyType {
+  title: string;
+  description: string;
+  badge: string;
+}
+
 export interface Location {
   slug: string;
   name: string;
+  h1: string;
   tagline: string;
+  primaryKeyword: string;
+  secondaryKeywords?: string[];
+  elevation: string;
+  distanceFromShimla: string;
   description: string;
+  overviewNarrative?: {
+    geo: string;
+    nature: string;
+    lifestyle: string;
+    residential: string;
+  };
+  aboutNarrative?: {
+    environment: string;
+    climate: string;
+    landscape: string;
+    lifestyleOpportunities: string;
+  };
+  whyExploreReasons?: Array<{
+    title: string;
+    description: string;
+  }>;
+  propertyTypesList?: LocationPropertyType[];
+  connectivityItems?: LocationConnectivityItem[];
+  attractionsList?: LocationAttraction[];
   landmarks: string[];
   connectivity: string[];
   lifestyle: string[];
   image: string;
   gallery?: string[];
   faqs?: FAQ[];
+  relatedBlogSlugs?: string[];
 }
 
 export interface Testimonial {

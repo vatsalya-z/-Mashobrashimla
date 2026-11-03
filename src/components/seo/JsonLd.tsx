@@ -115,3 +115,41 @@ export function articleSchema({
   };
 }
 
+export function singlePropertySchema(property: {
+  title: string;
+  description: string;
+  image: string;
+  location: string;
+  configuration: string;
+  price?: string;
+  status: string;
+  slug: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SingleFamilyResidence',
+    name: property.title,
+    description: property.description,
+    image: property.image.startsWith('http') ? property.image : `https://mashobrashimla.com${property.image}`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: property.location,
+      addressRegion: 'Himachal Pradesh',
+      addressCountry: 'IN',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '31.1278',
+      longitude: '77.2340',
+    },
+    numberOfRooms: property.configuration.includes('4') ? 4 : 3,
+    offers: {
+      '@type': 'Offer',
+      price: property.price || 'Price on Request',
+      priceCurrency: 'INR',
+      availability: property.status === 'sold-out' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
+      url: `https://mashobrashimla.com/properties/${property.slug}`,
+    },
+  };
+}
+

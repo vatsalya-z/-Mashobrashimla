@@ -29,14 +29,14 @@ import { websiteImages } from '@/lib/images';
 import JsonLd, { faqSchema } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Luxury Villas & Properties in Mashobra, Shimla | The Ridge Mashobra',
+  title: 'The Ridge Mashobra, Shimla | Premium Property Opportunities',
   description:
-    'Discover luxury villas and premium residential properties in Mashobra, Shimla. Explore 3 BHK and 4 BHK mountain homes with Himalayan views. Enquire now for The Ridge Mashobra.',
+    'Explore property opportunities in Mashobra, Shimla, Kufri and Naldehra. Discover mountain properties and get in touch for property enquiries.',
   alternates: { canonical: 'https://mashobrashimla.com' },
   openGraph: {
-    title: 'The Ridge Mashobra – Luxury Villas in Mashobra, Shimla',
+    title: 'The Ridge Mashobra, Shimla | Premium Property Opportunities',
     description:
-      'Premium residential properties and luxury villas in Mashobra, Shimla, Himachal Pradesh. Mountain lifestyle with Himalayan views.',
+      'Explore property opportunities in Mashobra, Shimla, Kufri and Naldehra. Discover mountain properties and get in touch for property enquiries.',
     images: [{ url: 'https://mashobrashimla.com/images/og-home.jpg', width: 1200, height: 630 }],
   },
 };

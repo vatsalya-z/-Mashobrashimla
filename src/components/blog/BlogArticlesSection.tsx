@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { 
   CalendarDays, 
   Clock, 
@@ -356,12 +357,54 @@ export default function BlogArticlesSection({
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 850px"
                   />
-                 
                 </div>
 
+                {/* Article Title */}
+                <h1
+                  className="text-xl sm:text-3xl font-bold text-[#172033] mb-4 leading-snug"
+                  style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}
+                >
+                  {readingPost.title}
+                </h1>
 
+                {/* Excerpt Lead */}
+                <div className="bg-[#F8FAFC] border-l-4 border-[#E07A2F] p-4 rounded-r-xl mb-6">
+                  <p className="text-sm sm:text-base font-medium text-[#1E3A5F] italic leading-relaxed">
+                    &ldquo;{readingPost.excerpt}&rdquo;
+                  </p>
+                </div>
+
+                {/* Article Content */}
+                <div className="prose prose-slate max-w-none text-[#334155] leading-relaxed text-sm sm:text-base">
+                  {renderFormattedContent(readingPost.content, readingPost.title)}
+                </div>
 
                 {/* In-Modal Advisory CTA Box */}
+                <div className="mt-8 pt-6 border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#F8FAFC] rounded-xl p-5">
+                  <div>
+                    <h4 className="font-bold text-[#172033] text-sm sm:text-base" style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}>
+                      Interested in properties in this area?
+                    </h4>
+                    <p className="text-xs text-[#64748B] mt-0.5">
+                      Connect with our property specialists for verified project brochures and site visits.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3 w-full sm:w-auto">
+                    <Link
+                      href={`/blog/${readingPost.slug}`}
+                      className="text-xs text-[#1E3A5F] hover:text-[#E07A2F] font-semibold underline underline-offset-2 flex-shrink-0"
+                    >
+                      Open Full Page →
+                    </Link>
+                    <EnquireModalButton
+                      source={`blog-modal-${readingPost.slug}`}
+                      title={`Enquire: ${readingPost.title}`}
+                      className="bg-[#E07A2F] hover:bg-[#c96b22] text-white font-bold text-xs px-5 py-2.5 rounded-lg transition-colors shadow-xs flex-shrink-0 cursor-pointer"
+                    >
+                      Enquire Now
+                    </EnquireModalButton>
+                  </div>
+                </div>
                 
               </div>
 
