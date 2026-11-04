@@ -53,14 +53,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonicalUrl = `https://mashobrashimla.com/properties/${slug}`;
   const metaDescription = `${property.configuration} in ${property.location}. ${property.highlights?.slice(0, 2).join(' ') || property.description.slice(0, 150)} Factual floor plans, pricing, and on-site visits.`;
 
+  const pageTitle = property.title.includes('Mashobra') 
+    ? `${property.title} | The Ridge Mashobra, Shimla`
+    : `${property.title} | Mashobra, Shimla`;
+
   return {
-    title: `${property.title} | Luxury Mountain Villa in ${property.location}`,
+    title: pageTitle,
     description: metaDescription,
     alternates: { 
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${property.title} | The Ridge Mashobra`,
+      title: pageTitle,
       description: metaDescription,
       url: canonicalUrl,
       siteName: 'The Ridge Mashobra, Shimla',
@@ -77,14 +81,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${property.title} | The Ridge Mashobra`,
+      title: pageTitle,
       description: metaDescription,
       images: [property.image.startsWith('http') ? property.image : `https://mashobrashimla.com${property.image}`],
     },
   };
 }
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+91XXXXXXXXXX';
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+919999995151';
 
 export default async function PropertyDetailPage({ params }: PageProps) {
   const { slug } = await params;
@@ -141,39 +145,6 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         ]}
       />
 
-      {/* ─── STICKY BOTTOM FLOATING CTA (Mobile & Desktop) ────── */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#E2E8F0] shadow-2xl py-2.5 sm:py-3 px-4 sm:px-6 transition-transform">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
-          <div className="hidden sm:block">
-            <div className="font-bold text-[#172033] text-sm md:text-base line-clamp-1">{property.title}</div>
-            <div className="text-xs text-[#64748B] flex items-center gap-2">
-              <span>{property.location}</span>
-              <span>·</span>
-              <span className="text-[#E07A2F] font-semibold">{property.configuration}</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-4 sm:px-5 py-2.5 rounded-xl hover:bg-[#1fad55] active:scale-98 transition-all text-xs sm:text-sm shadow-sm"
-            >
-              <FaWhatsapp className="text-base sm:text-lg" />
-              <span>WhatsApp</span>
-            </a>
-            <a
-              href="#enquiry-form"
-              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-[#E07A2F] text-white font-bold px-5 sm:px-7 py-2.5 rounded-xl hover:bg-[#c96b22] active:scale-98 transition-all text-xs sm:text-sm shadow-md"
-            >
-              <span>Enquire Now</span>
-              <FaArrowRight className="text-xs hidden min-[400px]:inline" />
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* ─── 1. HERO SECTION ───────────────────────────────────── */}
       <section className="relative w-full min-h-[520px] sm:min-h-[580px] lg:min-h-[640px] flex items-center justify-center overflow-hidden">
         <Image
@@ -184,17 +155,9 @@ export default async function PropertyDetailPage({ params }: PageProps) {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-[#1E3A5F]/85 to-[#0b1329]/80" />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center">
-          {/* Breadcrumb Navigation */}
-          <nav aria-label="Breadcrumb" className="inline-flex items-center gap-2 text-xs sm:text-sm text-white/80 mb-5 bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/15">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="text-white/40">/</span>
-            <Link href="/properties" className="hover:text-white transition-colors">Properties</Link>
-            <span className="text-white/40">/</span>
-            <span className="text-[#E07A2F] font-semibold line-clamp-1">{property.title}</span>
-          </nav>
+          
 
           {/* Top Verification Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
@@ -237,33 +200,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
           </div>
 
           {/* Hero CTAs */}
-          <div className="flex flex-wrap justify-center items-center gap-3.5 sm:gap-4">
-            <a
-              href="#enquiry-form"
-              className="inline-flex items-center gap-2 bg-[#E07A2F] text-white font-bold text-xs sm:text-sm px-8 py-3.5 rounded-xl hover:bg-[#c96b22] hover:scale-102 active:scale-98 transition-all shadow-xl"
-            >
-              <span>Request Brochure &amp; Pricing</span>
-              <FaArrowRight className="text-xs" />
-            </a>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold text-xs sm:text-sm px-7 py-3.5 rounded-xl hover:bg-[#1fad55] active:scale-98 transition-all shadow-md"
-            >
-              <FaWhatsapp className="text-base" />
-              <span>WhatsApp Consultation</span>
-            </a>
-            <EnquireModalButton
-              source={`property-hero-${property.slug}`}
-              title={`Schedule Private Site Visit – ${property.title}`}
-              subtitle="Connect with our mountain real estate specialists to plan a private walkthrough in Mashobra."
-              className="inline-flex items-center gap-2 bg-white/15 text-white font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-xl hover:bg-white/25 transition-all backdrop-blur-md border border-white/20 cursor-pointer"
-            >
-              <FaRegCalendarAlt className="text-xs text-[#E07A2F]" />
-              <span>Schedule Site Visit</span>
-            </EnquireModalButton>
-          </div>
+          
         </div>
       </section>
 
@@ -332,16 +269,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                   ))}
                 </div>
 
-                {/* Developer / Transparency Note */}
-                {property.developerNote && (
-                  <div className="mt-6 flex items-start gap-3 bg-amber-50/80 border border-amber-200/80 rounded-2xl p-4 sm:p-5 text-xs sm:text-sm text-amber-900 leading-relaxed shadow-xs">
-                    <FaInfoCircle className="text-base text-amber-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="font-semibold block text-amber-950 mb-0.5">Property Advisory Notice:</strong>
-                      <span>{property.developerNote}</span>
-                    </div>
-                  </div>
-                )}
+                
               </div>
 
               {/* Multi-Level Layout Concept */}

@@ -170,7 +170,7 @@ export default function ProjectGallery({
         {/* Centered View All Button Below Section */}
         <div className="mt-8 text-center flex justify-center">
           <Link
-            href="/projects/the-ridge-mashobra"
+            href="/the-ridge-mashobra"
             className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl hover:bg-[#162d4a] transition-all shadow-md hover:shadow-lg group"
           >
             <span>View All Project Details &amp; Visuals</span>

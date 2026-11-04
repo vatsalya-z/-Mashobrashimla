@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://mashobrashimla.com/enquire-now' },
 };
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+91XXXXXXXXXX';
+const PHONE_NUMBER = process.env.NEXT_PUBLIC_PHONE || '+91-9999995151';
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+919999995151';
 const WHATSAPP_MSG = 'Hello, I am interested in properties in Mashobra, Shimla. Please share details.';
 
 export default function EnquireNowPage() {
@@ -70,12 +71,12 @@ export default function EnquireNowPage() {
             {/* Form */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-xl border border-[#E2E8F0] p-6 sm:p-8">
-                <h1
+                <h2
                   className="text-2xl sm:text-3xl font-bold text-[#172033] mb-2"
                   style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}
                 >
                   Property Enquiry Form
-                </h1>
+                </h2>
                 <p className="text-[#64748B] text-sm mb-8">
                   Fill in your details below and our property consultant will contact you within 24 hours.
                 </p>
@@ -94,8 +95,8 @@ export default function EnquireNowPage() {
                     <FaPhoneAlt className="text-[#E07A2F] text-xs flex-shrink-0" />
                     <div>
                       <div className="text-white/60 text-xs mb-0.5">Phone / WhatsApp</div>
-                      <a href="tel:+91XXXXXXXXXX" className="text-white hover:text-[#E07A2F] transition-colors">
-                        +91-XXXXXXXXXX
+                      <a href={`tel:${PHONE_NUMBER.replace(/\s+/g, '')}`} className="text-white hover:text-[#E07A2F] transition-colors">
+                        {PHONE_NUMBER}
                       </a>
                     </div>
                   </div>

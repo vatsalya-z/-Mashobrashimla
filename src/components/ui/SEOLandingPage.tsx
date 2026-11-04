@@ -37,7 +37,7 @@ interface SEOLandingPageProps {
   ctaSource: string;
 }
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+91XXXXXXXXXX';
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+919999995151';
 const waMsg = 'Hello, I am interested in exploring properties in Mashobra and Shimla. Please share available options.';
 
 export default function SEOLandingPage({
@@ -78,7 +78,6 @@ export default function SEOLandingPage({
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#1E3A5F]/80 to-[#0f172a]/75" />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center">
           {/* Breadcrumb Navigation */}

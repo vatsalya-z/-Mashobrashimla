@@ -27,6 +27,8 @@ import {
 } from 'react-icons/fa';
 import EnquiryModal from '@/components/forms/EnquiryModal';
 
+const PHONE_NUMBER = process.env.NEXT_PUBLIC_PHONE || '+91-9999995151';
+
 // --- DATA ---
 
 const amenitiesList = [
@@ -192,7 +194,7 @@ export default function RidgeProjectSections() {
           {/* Centered View All Button Below Section */}
           <div className="mt-10 text-center flex justify-center">
             <Link
-              href="/projects/the-ridge-mashobra"
+              href="/project/amenities"
               className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl hover:bg-[#162d4a] transition-all shadow-md hover:shadow-lg group"
             >
               <span>View All Project Amenities</span>
@@ -476,7 +478,7 @@ export default function RidgeProjectSections() {
                 Schedule Site Visit
               </button>
               <a
-                href="tel:+91XXXXXXXXXX"
+                href={`tel:${PHONE_NUMBER.replace(/\s+/g, '')}`}
                 className="inline-flex items-center gap-2 border border-white/30 text-white font-medium text-xs sm:text-sm px-5 py-3 rounded-xl hover:bg-white/10 transition-colors"
               >
                 <FaPhoneAlt className="text-xs" />
@@ -485,16 +487,7 @@ export default function RidgeProjectSections() {
             </div>
           </div>
 
-          {/* Centered View All Button Below Section */}
-          <div className="mt-10 text-center flex justify-center">
-            <Link
-              href="/gallery"
-              className="inline-flex items-center gap-2 bg-[#E07A2F] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl hover:bg-[#c96b22] transition-all shadow-md hover:shadow-lg group"
-            >
-              <span>View All Project Videos &amp; Photos</span>
-              <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+          
         </div>
       </section>
 

@@ -20,19 +20,19 @@ import JsonLd, { breadcrumbSchema } from '@/components/seo/JsonLd';
 import { FadeInUp, StaggerContainer, StaggerItem } from '@/components/motion/MotionComponents';
 
 export const metadata: Metadata = {
-  title: 'Properties in Mashobra & Shimla | Explore Available Properties',
+  title: 'Properties in Mashobra & Shimla | Explore Property Opportunities',
   description:
     'Explore verified luxury mountain villas, 3 BHK and 4 BHK residential chalets, and second-home enclaves in Mashobra, Shimla, Kufri, and Naldehra. Himalayan views, clean mountain air, and transparent advisory.',
   alternates: { canonical: 'https://mashobrashimla.com/properties' },
   openGraph: {
-    title: 'Properties in Mashobra & Shimla | Explore Available Properties',
+    title: 'Properties in Mashobra & Shimla | Explore Property Opportunities',
     description:
       'Discover 3 BHK and 4 BHK luxury residences set amidst the Deodar cedar forests of Mashobra and greater Shimla.',
     images: [{ url: 'https://mashobrashimla.com/images/hero/hero-mountain-villa.webp', width: 1200, height: 630 }],
   },
 };
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+91XXXXXXXXXX';
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+919999995151';
 const waMsg = 'Hello, I am interested in exploring properties in Mashobra and Shimla. Please share available options.';
 
 export default function PropertiesPage() {

@@ -26,6 +26,7 @@ const footerLinks = {
   ],
   properties: [
     { label: 'The Ridge Mashobra', href: '/the-ridge-mashobra' },
+    { label: 'Project Amenities', href: '/project/amenities' },
     { label: 'Luxury Villas Mashobra', href: '/luxury-villas-mashobra' },
     { label: '3 BHK Villas Mashobra', href: '/3-bhk-villas-mashobra' },
     { label: '4 BHK Villas Mashobra', href: '/4-bhk-villas-mashobra' },
@@ -45,6 +46,9 @@ const footerLinks = {
   ],
 };
 
+const PHONE_NUMBER = process.env.NEXT_PUBLIC_PHONE || '+91-9999995151';
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+919999995151';
+
 const socialLinks = [
   { icon: FaFacebookF, label: 'Facebook', href: '#', hoverBg: 'hover:bg-[#1877F2]' },
   { icon: FaInstagram, label: 'Instagram', href: '#', hoverBg: 'hover:bg-[#E4405F]' },
@@ -53,7 +57,7 @@ const socialLinks = [
   { 
     icon: FaWhatsapp, 
     label: 'WhatsApp', 
-    href: `https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP || '+91XXXXXXXXXX').replace(/\D/g, '')}`,
+    href: `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}`,
     hoverBg: 'hover:bg-[#25D366]'
   },
 ];
@@ -87,8 +91,8 @@ export default function Footer() {
             <div className="space-y-2.5 text-sm">
               <div className="flex items-center gap-2.5 text-white/70">
                 <FaPhoneAlt className="text-[#E07A2F] text-xs flex-shrink-0" />
-                <a href="tel:+91XXXXXXXXXX" className="hover:text-white transition-colors">
-                  +91-XXXXXXXXXX
+                <a href={`tel:${PHONE_NUMBER.replace(/\s+/g, '')}`} className="hover:text-white transition-colors">
+                  {PHONE_NUMBER}
                 </a>
               </div>
               <div className="flex items-center gap-2.5 text-white/70">

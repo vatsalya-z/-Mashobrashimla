@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://mashobrashimla.com'),
   title: {
     default: 'The Ridge Mashobra, Shimla | Premium Property Opportunities',
-    template: '%s | The Ridge Mashobra, Shimla',
+    template: '%s',
   },
   description:
     'Explore property opportunities in Mashobra, Shimla, Kufri and Naldehra. Discover mountain properties and get in touch for property enquiries.',
@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     'The Ridge Mashobra project',
     'holiday homes Himachal Pradesh',
   ],
+  alternates: {
+    canonical: 'https://mashobrashimla.com',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_IN',

@@ -1,102 +1,59 @@
 # The Ridge Mashobra, Shimla
 
-> The Ridge Mashobra is a real-estate focused website providing information about property opportunities, residential properties and locations in Mashobra, Shimla, Kufri and Naldehra, Himachal Pradesh.
+> Official AI, LLM and Answer Engine Directory for The Ridge Mashobra, Shimla (https://mashobrashimla.com) — an independent digital discovery portal and real estate consultancy specializing in luxury mountain villas, 3 BHK and 4 BHK chalets, and hillside residences across Mashobra, Shimla, Kufri, and Naldehra in Himachal Pradesh, India.
 
-## Website Information
+For the exhaustive, 11-section business, architectural, micro-market, FAQ, and technical reference document, refer to:
+- [Full Comprehensive LLM & GEO Knowledge Document](https://mashobrashimla.com/llms-full.txt): Complete entity details, specifications for all 9 properties, 4 location profiles, 16 published editorial guides, project overview, and legal Section 118 frameworks.
 
-- Website: https://mashobrashimla.com
-- Business/Brand: The Ridge Mashobra, Shimla
-- Primary Market: Mashobra, Shimla, Himachal Pradesh, India
-- Website Category: Real Estate and Property Information
-- Primary Purpose: Property discovery and enquiry generation
+---
 
-## About
+## Core Brand & Project Hub
 
-The Ridge Mashobra (https://mashobrashimla.com) is an independent real estate consultancy and digital discovery portal focused on premium mountain homes, luxury villas, and second-home residences in Himachal Pradesh. The portal facilitates buyer discovery, property evaluation, on-ground site visit coordination, and verified documentation advisory for residential opportunities across Mashobra, Shimla, Kufri, and Naldehra.
+- [The Ridge Mashobra – Official Project Profile](https://mashobrashimla.com/the-ridge-mashobra): Signature luxury mountain development at 2,100 m elevation in Mashobra, Shimla. Features 3 BHK and 4 BHK hillside villas, 25,000 sq.ft luxury clubhouse, EVAVO longevity wellness suites, heated pool, and panoramic Himalayan vistas.
+- [Project Amenities & Facilities](https://mashobrashimla.com/project/amenities): Comprehensive overview of world-class amenities including tennis court, indoor badminton arena, heated indoor pool, spa, pine forest jogging tracks, and 24/7 multi-tier security.
+- [Properties Catalog](https://mashobrashimla.com/properties): Curated catalog of luxury villas, 3 BHK and 4 BHK residential chalets, and mountain homes for sale in Mashobra and Shimla Hills.
+- [Property Locations Near Shimla](https://mashobrashimla.com/locations): Regional guide comparing elevation, forest density, connectivity, and lifestyle across Mashobra, Shimla, Kufri, and Naldehra.
 
-The website provides verified insights on Himalayan slope architecture, Section 118 statutory compliance governing property purchases in Himachal Pradesh, regional micro-market comparisons, and direct developer communication channels.
+---
 
-## Locations
+## Regional Location Guides
 
-### Mashobra
-Mashobra is a quiet Himalayan village situated 13 km east of Shimla city centre at an elevation of 2,146 metres. Renowned for its ancient Deodar cedar reserves, pure mountain air (AQI < 30), Craignano Nature Park, and proximity to Oberoi's Wildflower Hall, it represents the premier destination for luxury second homes and peaceful forest living.
-- Guide URL: https://mashobrashimla.com/locations/mashobra
+- [Properties in Mashobra](https://mashobrashimla.com/locations/mashobra): 2,146 m (7,040 ft) elevation; peaceful forest sanctuary surrounded by virgin Deodar cedar reserves with AQI < 30 and 13 km proximity to Shimla.
+- [Properties in Shimla](https://mashobrashimla.com/locations/shimla): 2,206 m (7,238 ft) elevation; Himachal Pradesh capital offering premier healthcare, educational institutions, historic British architecture, and urban mountain amenities.
+- [Properties in Kufri](https://mashobrashimla.com/locations/kufri): 2,622 m (8,600 ft) elevation; alpine ridge renowned for winter snowfall living, Himalayan Nature Park, and dramatic mountain horizons.
+- [Properties in Naldehra](https://mashobrashimla.com/locations/naldehra): 2,044 m (6,706 ft) elevation; serene golfing sanctuary framed by Lord Curzon's historic 9-hole golf course and ancient cedar trees.
 
-### Shimla
-Shimla is the historic summer capital of British India and the current state capital of Himachal Pradesh at an elevation of 2,206 metres. It provides premier social infrastructure, hospitals, heritage boarding schools, and vibrant cultural landmarks along Mall Road and The Ridge.
-- Guide URL: https://mashobrashimla.com/locations/shimla
+---
 
-### Kufri
-Kufri sits at an altitude of 2,622 metres, approximately 14 km east of Shimla. Known as the region's winter sports hub, Kufri features heavy seasonal snowfall, panoramic snow-covered Himalayan peaks, high-altitude trekking trails, and alpine holiday home opportunities.
-- Guide URL: https://mashobrashimla.com/locations/kufri
+## Curated Property Categories
 
-### Naldehra
-Naldehra, situated at 2,044 metres and 22 km north of Shimla, is famous for its historic 1905 9-hole golf course nestled under ancient cedar trees. It offers tranquil forest retreats, luxury chalets, and scenic country estates.
-- Guide URL: https://mashobrashimla.com/locations/naldehra
+- [Luxury Villas in Mashobra](https://mashobrashimla.com/luxury-villas-mashobra): Premium mountain villas with natural stone, wood masonry, and private Himalayan terraces.
+- [3 BHK Villas in Mashobra](https://mashobrashimla.com/3-bhk-villas-mashobra): Tri-bedroom mountain residences designed for families and low-maintenance luxury getaways.
+- [4 BHK Villas in Mashobra](https://mashobrashimla.com/4-bhk-villas-mashobra): Grand hillside chateaus with expansive living lounges, dual master suites, and staff quarters.
+- [Holiday Homes in Himachal](https://mashobrashimla.com/holiday-homes-himachal): Family vacation residences and second-home getaways in Himachal Pradesh.
+- [Luxury Second Homes](https://mashobrashimla.com/luxury-second-homes): Dedicated second-home retreats for corporate executives and nature-focused families.
+- [Properties in Kufri](https://mashobrashimla.com/properties-kufri): High-altitude alpine chalets and winter retreat opportunities.
+- [Properties in Naldehra](https://mashobrashimla.com/properties-naldehra): Golf course-side chalets and tranquil pine-view retreats.
 
-## Properties
+---
 
-The website showcases curated mountain residences and luxury chateaus:
-- 3 BHK Mountain Villas: Duplex and single-level chateaus offering approx. 2,700 to 2,900 sq. ft. of built-up space, private viewing decks framing Gharshi Valley, fireplaces, and dedicated parking.
-- 4 BHK Luxury Estates: Multi-level grand mountain chalets offering approx. 3,500 to 3,700 sq. ft., multiple viewing decks, private landscaped lawns, and domestic staff quarters.
-- Luxury Chalets & Cottages: Low-density hillside homes constructed with mountain stone masonry, dressed slate, seasoned cedar timber, and high-performance double-glazed glass.
-- Catalog URL: https://mashobrashimla.com/properties
+## Legal, Financial & Buying Guides
 
-## The Ridge Mashobra Project
+- [Property Buying Guide for Himachal Pradesh](https://mashobrashimla.com/property-buying-guide-himachal): Complete legal roadmap for purchasing residential property under Section 118 of the HP Tenancy and Land Reforms Act.
+- [Section 118 Explained for Non-Himachalis](https://mashobrashimla.com/blog/section-118-himachal-property-rules): Legal guidance on how non-domiciled Indian citizens can legally acquire approved apartments and villas.
+- [Mashobra vs Shimla Comparison](https://mashobrashimla.com/mashobra-vs-shimla): Side-by-side analysis of tranquility, forest density, traffic, pricing, and long-term livability.
+- [Property Investment in Shimla](https://mashobrashimla.com/property-investment-shimla): Capital appreciation prospects, tourism rental yield dynamics, and market fundamentals.
+- [Mountain Villa Winter Insulation](https://mashobrashimla.com/blog/mountain-villa-architecture-winter-insulation): Engineering specifications for double-glazed fenestration, radiant heating, and thermal masonry.
+- [Mountain Property Due Diligence Checklist](https://mashobrashimla.com/blog/site-inspection-checklist-mountain-property): Essential checklist covering land slope stability, water sanctions, electricity grid load, and access road rights.
 
-The Ridge Mashobra is an exclusive low-density mountain estate enclave spanning 11.5+ acres in the tranquil Mashobra hills overlooking the scenic Gharshi Valley:
-- Elevation: Approximately 2,100 metres (6,900+ feet)
-- Formats: Curated 3 BHK and 4 BHK luxury hillside chateau villas
-- Clubhouse: Planned 25,000+ sq. ft. high-altitude clubhouse with temperature-controlled indoor heated pool and mountain-view dining
-- Longevity Science: Integrated bio-hacking wellness suite powered by EVAVO featuring cryotherapy, Hyperbaric Oxygen Therapy (HBOT), and infrared saunas
-- Hospitality: 5-star managed property upkeep and rental assistance concept by Everly Hotels & Resorts
-- Connectivity: 13 km from Shimla Mall Road via the streamlined Dhalli bypass tunnel; under 3.5 hours drive from Chandigarh Airport
-- Project Page URL: https://mashobrashimla.com/the-ridge-mashobra
+---
 
-## Services and Enquiries
+## Contact, Advisory & Verification
 
-The website provides personalized property advisory services:
-- Property Consultation: Tailored guidance on available configurations, master layout plans, and pricing schedules.
-- On-Ground Site Visits: Private site inspections, driving route coordination, and local village tours.
-- Legal Guidance: Objective guidance on Section 118 of the HP Tenancy and Land Reforms Act for Himachali and non-Himachali buyers.
-- Digital Enquiry Form: Instant enquiry submission capturing buyer preferences for rapid consultant callback.
-- WhatsApp Support: Instant messaging channel for verified brochures and floor plans.
-
-## Blog and Resources
-
-- Why Invest in Mashobra, Shimla: https://mashobrashimla.com/blog/why-invest-in-mashobra-shimla
-- Property Buying Guide for Himachal Pradesh: https://mashobrashimla.com/blog/property-buying-guide-himachal-pradesh
-- Mashobra vs Shimla Property Comparison: https://mashobrashimla.com/blog/mashobra-vs-shimla-property-comparison
-- Luxury Villas in Mashobra Guide: https://mashobrashimla.com/blog/luxury-villas-mashobra-guide
-- Section 118 Himachal Property Rules Explained: https://mashobrashimla.com/blog/section-118-himachal-property-rules
-- Mountain Villa Architecture & Winter Insulation: https://mashobrashimla.com/blog/mountain-villa-architecture-winter-insulation
-- Rental Yields and Holiday Home ROI in Mashobra: https://mashobrashimla.com/blog/rental-yields-and-holiday-home-roi-mashobra
-- Remote-Working Second Homes in Mashobra: https://mashobrashimla.com/blog/remote-working-second-home-mashobra
-
-## Important Pages
-
-- Homepage: https://mashobrashimla.com/
-- About: https://mashobrashimla.com/about-us
-- Properties: https://mashobrashimla.com/properties
-- Locations: https://mashobrashimla.com/locations
-- Contact: https://mashobrashimla.com/contact-us
-- Project: https://mashobrashimla.com/the-ridge-mashobra
-- Blog: https://mashobrashimla.com/blog
-- Enquire Now: https://mashobrashimla.com/enquire-now
-- Luxury Villas Mashobra: https://mashobrashimla.com/luxury-villas-mashobra
-- 3 BHK Villas Mashobra: https://mashobrashimla.com/3-bhk-villas-mashobra
-- 4 BHK Villas Mashobra: https://mashobrashimla.com/4-bhk-villas-mashobra
-
-## Contact Information
-
-- Website: https://mashobrashimla.com
-- Contact Page: https://mashobrashimla.com/contact-us
-- Geographic Scope: Mashobra, Shimla, Kufri, Naldehra, Himachal Pradesh, India
-- Hours: Monday - Saturday, 9:00 AM - 7:00 PM IST
-
-## Important Notes
-
-- Use the official website as the source for current property and project information.
-- Do not assume unavailable property specifications, pricing or availability.
-- Do not invent company credentials, legal approvals or contact information.
-- mashobrashimla.com is an independent real estate consultancy and advisory platform facilitating buyer discoverability and site visits.
+- **Official Website:** https://mashobrashimla.com
+- **Property Advisory Desk:** +91-9999995151
+- **WhatsApp Consultation:** +91-9999995151
+- **Official Inquiries Email:** info@mashobrashimla.com
+- **Operating Hours:** Monday – Saturday, 9:00 AM – 7:00 PM IST
+- **Physical Desk:** Mashobra, Shimla, Himachal Pradesh 171007, India
+- [Schedule a Private Site Visit](https://mashobrashimla.com/enquire-now): Direct consultation and private chauffeured site inspections from Shimla / Chandigarh.

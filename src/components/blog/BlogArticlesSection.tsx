@@ -360,12 +360,12 @@ export default function BlogArticlesSection({
                 </div>
 
                 {/* Article Title */}
-                <h1
+                <h2
                   className="text-xl sm:text-3xl font-bold text-[#172033] mb-4 leading-snug"
                   style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}
                 >
                   {readingPost.title}
-                </h1>
+                </h2>
 
                 {/* Excerpt Lead */}
                 <div className="bg-[#F8FAFC] border-l-4 border-[#E07A2F] p-4 rounded-r-xl mb-6">

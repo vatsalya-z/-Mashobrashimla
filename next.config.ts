@@ -38,6 +38,21 @@ const nextConfig: NextConfig = {
         destination: '/properties/cedar-crest-luxury-villa-mashobra',
         permanent: true,
       },
+      {
+        source: '/projects/the-ridge-mashobra',
+        destination: '/the-ridge-mashobra',
+        permanent: true,
+      },
+      {
+        source: '/projects/amenities',
+        destination: '/project/amenities',
+        permanent: true,
+      },
+      {
+        source: '/gallery',
+        destination: '/the-ridge-mashobra',
+        permanent: true,
+      },
     ];
   },
 };

@@ -24,8 +24,10 @@ export function generateMetadata({
 }: MetaOptions): Metadata {
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
 
+  const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+
   return {
-    title: `${title} | ${SITE_NAME}`,
+    title: fullTitle,
     description,
     keywords: keywords.join(', '),
     authors: [{ name: SITE_NAME }],
@@ -34,7 +36,7 @@ export function generateMetadata({
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${title} | ${SITE_NAME}`,
+      title: fullTitle,
       description,
       url: canonicalUrl,
       siteName: SITE_NAME,

@@ -19,19 +19,19 @@ export const websiteImages = {
       height: 1080,
     },
     mountainVilla: {
-      src: '/images/hero/hero-mountain-villa.webp',
+      src: '/images/properties/mashobra/grand-mountain-manor-4bhk.webp',
       alt: 'Multi-level modern luxury villa built into a mountain slope in Mashobra with natural stone walls and wooden balconies',
       width: 1920,
       height: 1080,
     },
     morningResidence: {
-      src: '/images/hero/hero-morning-residence.webp',
+      src: '/images/properties/mashobra/alpine-cedar-heritage-cottage.webp',
       alt: 'Serene mountain residence in Mashobra in soft morning mist and golden sunrise light',
       width: 1920,
       height: 1080,
     },
     himalayanValley: {
-      src: '/images/hero/hero-himalayan-valley.webp',
+      src: '/images/properties/mashobra/highland-slope-tiered-residence.webp',
       alt: 'Expansive luxury mountain villa overlooking panoramic Himalayan valley and distant blue mountain ridges',
       width: 1920,
       height: 1080,
@@ -339,40 +339,40 @@ export const websiteImages = {
     villas: [
       {
         src: '/images/properties/villas/luxury-villa-exterior-01.webp',
-        alt: 'Modern luxury mountain villa with natural stone masonry, cedar timber deck, and panoramic Himalayan vistas',
+        alt: 'Ultra-luxury modern multi-tiered mountain villa with grey slate masonry, glass walls, and cantilevered wooden deck in Mashobra',
         title: 'The Ridge Signature Residence',
       },
       {
         src: '/images/properties/villas/luxury-villa-exterior-02.webp',
-        alt: 'Contemporary Himalayan villa in Mashobra featuring natural slate stone masonry and cedar accents',
+        alt: 'Alpine-Himachali timber chalet with steep slate roof, twin dormers, stone chimney, and wrap-around viewing balcony in Mashobra',
         title: 'Cedar Crest Luxury Villa',
       },
       {
         src: '/images/properties/villas/luxury-villa-exterior-03.webp',
-        alt: 'Modern wooden mountain villa with expansive wrap-around balconies and forest views',
+        alt: 'Stepped multi-level hillside residence with dry-stack stone walls, black steel glass corners, and linear fire pit terrace in Mashobra',
         title: 'Highland Slope Villa',
       },
       {
         src: '/images/properties/villas/luxury-villa-exterior-04.webp',
-        alt: 'Multi-level luxury villa on a sloping mountain plot with cascading landscaped stone terraces',
-        title: 'Valley Vista Mountain Residence',
+        alt: 'Two-story contemporary family villa featuring warm sandstone, timber cladding, pergola terrace, and cobblestone driveway in Mashobra',
+        title: '3 BHK Contemporary Mountain Villa',
       },
       {
         src: '/images/properties/villas/luxury-villa-exterior-05.webp',
-        alt: 'Minimalist luxury glass-fronted mountain villa in Mashobra with floor-to-ceiling valley windows',
-        title: 'Grand Pinnacle Villa',
+        alt: 'Grand symmetrical alpine manor with double-height glass atrium entrance and stone pillars against Himalayan sunset in Mashobra',
+        title: '4 BHK Grand Mountain Manor',
       },
     ],
     cottages: [
       {
         src: '/images/properties/cottages/mountain-cottage-exterior-01.webp',
-        alt: 'Himachali-inspired stone and timber cottage with handcrafted wooden eaves and slate roof',
-        title: 'Alpine Cedar Cottage',
+        alt: 'Himachali Kath-Kuni inspired artisan cottage with alternating stone-and-timber walls and carved wooden eaves in Mashobra',
+        title: 'Alpine Cedar Heritage Cottage',
       },
       {
         src: '/images/properties/cottages/mountain-cottage-exterior-02.webp',
-        alt: 'Charming luxury hillside cottage with stone chimney and garden patio overlooking misty ridges',
-        title: 'Pine Crest Mountain Home',
+        alt: 'Striking three-story modern A-frame alpine glass lodge with heavy timber beams and cedar sun deck in Mashobra',
+        title: 'Pine Crest Alpine A-Frame Lodge',
       },
       {
         src: '/images/properties/cottages/mountain-cottage-exterior-03.webp',
@@ -388,12 +388,12 @@ export const websiteImages = {
     luxuryHomes: [
       {
         src: '/images/properties/luxury-homes/luxury-mountain-estate-01.webp',
-        alt: 'Expansive mountain luxury estate with slate roofs and landscaped stone viewing decks',
+        alt: 'Sprawling ridge crest chateau with multi-gable slate roofs and stone terrace overlooking panoramic mountain ranges in Mashobra',
         title: 'Grand Summit Mountain Estate',
       },
       {
         src: '/images/properties/luxury-homes/luxury-mountain-estate-02.webp',
-        alt: 'Modern hillside luxury mansion with manicured alpine gardens and panoramic valley orientation',
+        alt: 'Dramatic contemporary alpine chateau featuring dark granite boulders, charred cedar siding, and cantilevered glass box lounge in Mashobra',
         title: 'Stonegate Alpine Chateau',
       },
       {

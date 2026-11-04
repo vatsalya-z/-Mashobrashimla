@@ -114,7 +114,7 @@ const projectFaqs: FAQItem[] = [
   },
 ];
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+91XXXXXXXXXX';
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+919999995151';
 const waMsg = 'Hello, I am interested in The Ridge Mashobra project. Please share brochure and pricing.';
 
 export default function TheRidgeMashobraPage() {
@@ -136,14 +136,13 @@ export default function TheRidgeMashobraPage() {
       {/* 2. HERO SECTION */}
       <section className="relative w-full min-h-[540px] sm:min-h-[660px] flex items-center justify-center overflow-hidden">
         <Image
-          src={websiteImages.banners.projectPanorama.src}
-          alt={websiteImages.banners.projectPanorama.alt}
+          src="/images/properties/ridge-mashobra-hero.jpg"
+          alt="The Ridge Mashobra, Shimla - Luxury Mountain Villas"
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#1E3A5F]/80 to-[#0f172a]/75" />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center">
           
@@ -183,24 +182,7 @@ export default function TheRidgeMashobraPage() {
             </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-wrap justify-center items-center gap-4">
-            <EnquireModalButton
-              source="/the-ridge-mashobra"
-              title="Enquire About The Ridge Mashobra"
-              subtitle="Connect with our consultancy team to receive verified floor plans, master layout, and pricing schedules."
-              className="inline-flex items-center gap-2 bg-[#E07A2F] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl hover:bg-[#c96b22] hover:scale-102 transition-all shadow-lg cursor-pointer"
-            >
-              <span>Enquire Now</span>
-              <FaArrowRight className="text-xs" />
-            </EnquireModalButton>
-            <a
-              href="#project-overview"
-              className="inline-flex items-center gap-2 bg-white/15 text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-xl hover:bg-white/25 transition-all backdrop-blur-xs border border-white/20"
-            >
-              <span>Explore Project Details</span>
-            </a>
-          </div>
+
         </div>
       </section>
 

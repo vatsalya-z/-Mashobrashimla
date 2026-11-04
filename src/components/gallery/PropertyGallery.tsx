@@ -251,3 +251,4 @@ export default function PropertyGallery({ images, propertyTitle }: PropertyGalle
     </div>
   );
 }
+

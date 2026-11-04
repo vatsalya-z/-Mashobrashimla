@@ -36,8 +36,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getBlogBySlug(slug);
   if (!post) return { title: 'Article Not Found' };
 
+  const rawTitle = post.seoTitle || post.title;
+  const pageTitle = rawTitle.includes('The Ridge Mashobra') ? rawTitle : `${rawTitle} | The Ridge Mashobra`;
+
   return {
-    title: `${post.seoTitle || post.title} | The Ridge Mashobra`,
+    title: pageTitle,
     description: post.seoDescription || post.excerpt,
     alternates: { canonical: `https://mashobrashimla.com/blog/${slug}` },
     openGraph: {

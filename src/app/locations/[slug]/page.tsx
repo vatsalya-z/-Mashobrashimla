@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: 'Discover premium real estate, luxury mountain villas, and residential property opportunities in Mashobra, Shimla amidst virgin Deodar cedar forests.',
     },
     shimla: {
-      title: 'Properties in Shimla | Explore Residential Property Opportunities',
+      title: 'Properties in Shimla | Explore Residential Properties',
       description: 'Explore residential property opportunities and luxury mountain homes in Shimla, Himachal Pradesh. Verified listings, area connectivity, and property advisory.',
     },
     kufri: {
@@ -468,10 +468,7 @@ export default async function LocationDetailPage({ params }: PageProps) {
             </StaggerContainer>
           )}
 
-          {/* Informational Disclaimer Box */}
-          <div className="max-w-3xl mx-auto text-center bg-white/70 border border-[#CBD5E1] rounded-xl p-4 text-xs text-[#64748B] leading-relaxed">
-            <strong>Buyer Advisory:</strong> Real estate in mountain locations involves specific topography, local regulations (such as Section 118 of the HP Tenancy and Land Reforms Act), and seasonal considerations. We encourage all buyers to conduct independent verification of titles and approvals before entering into any transaction.
-          </div>
+          
         </div>
       </section>
 
