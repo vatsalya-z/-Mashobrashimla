@@ -16,6 +16,30 @@ const nextConfig: NextConfig = {
     "localhost",
     "127.0.0.1",
   ],
+  async redirects() {
+    return [
+      {
+        source: '/cedar-crest-luxury-villa-mashobra',
+        destination: '/properties/cedar-crest-luxury-villa-mashobra',
+        permanent: true,
+      },
+      {
+        source: '/cedar-crest-villa',
+        destination: '/properties/cedar-crest-luxury-villa-mashobra',
+        permanent: true,
+      },
+      {
+        source: '/properties/cedar-crest',
+        destination: '/properties/cedar-crest-luxury-villa-mashobra',
+        permanent: true,
+      },
+      {
+        source: '/properties/cedar-crest-villa',
+        destination: '/properties/cedar-crest-luxury-villa-mashobra',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
