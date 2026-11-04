@@ -347,7 +347,7 @@ export default function AboutUsPage() {
                 </div>
 
                 {/* Quick Action Link - Responsive Mobile Grid */}
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg">
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg mx-auto sm:mx-0">
                   <Link
                     href="/properties"
                     className="inline-flex items-center justify-center gap-2 bg-[#1E3A5F] text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl hover:bg-[#162d4a] transition-all shadow-sm hover:shadow-md group w-full"

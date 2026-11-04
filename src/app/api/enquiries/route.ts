@@ -1,7 +1,7 @@
 // src/app/api/enquiries/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { validateEnquiry, sanitizeString } from '@/lib/validation/enquiry';
-import { saveLeadToExcel, saveLeadToJSON } from '@/lib/excel/leads';
+import { saveLeadToExcel, saveLeadToJSON, saveLeadToGoogleSheets } from '@/lib/excel/leads';
 
 // Simple in-memory rate limiter (per IP, resets on server restart)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -74,17 +74,20 @@ export async function POST(req: NextRequest) {
       submittedAt: new Date().toISOString(),
     };
 
-    // Log to server (always works)
+    // Log to server
     console.log('[LEAD]', JSON.stringify({ ...lead, email: '***', mobile: '***' }));
 
-    // Save to JSON (reliable fallback)
+    // 1. Sync to Google Sheet (Cloud Excel)
+    await saveLeadToGoogleSheets(lead);
+
+    // 2. Save to JSON (reliable fallback)
     await saveLeadToJSON(lead);
 
-    // Save to Excel (best effort)
+    // 3. Save to local Excel (best effort fallback)
     await saveLeadToExcel(lead);
 
     return NextResponse.json(
-      { message: 'Enquiry submitted successfully. We will contact you shortly.' },
+      { message: 'Enquiry submitted successfully. We will contact you shortly.', success: true },
       { status: 200 }
     );
   } catch (error) {
@@ -94,5 +97,16 @@ export async function POST(req: NextRequest) {
       { status: 500 }
     );
   }
+}
+
+export async function GET() {
+  const hasWebhook = Boolean(process.env.GOOGLE_SHEET_WEBHOOK_URL || process.env.GOOGLE_SHEETS_URL);
+  return NextResponse.json({
+    status: 'ok',
+    googleSheetConfigured: hasWebhook,
+    message: hasWebhook
+      ? 'Google Sheet Webhook URL is configured.'
+      : 'Google Sheet Webhook URL is not configured yet. Set GOOGLE_SHEET_WEBHOOK_URL in your .env file.',
+  });
 }
 

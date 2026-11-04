@@ -185,7 +185,7 @@ export default async function LocationDetailPage({ params }: PageProps) {
       {location.slug === 'mashobra' && (
         <section className="bg-gradient-to-r from-[#1E3A5F] to-[#152a45] text-white py-6 border-y border-[#E2E8F0]/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-center md:text-left">
+            <div className="flex flex-col md:flex-row items-center gap-3 text-center md:text-left">
               <div className="w-10 h-10 rounded-full bg-[#E07A2F]/20 flex items-center justify-center flex-shrink-0 text-[#E07A2F]">
                 <FaHome className="text-lg" />
               </div>
@@ -505,7 +505,7 @@ export default async function LocationDetailPage({ params }: PageProps) {
                       {pt.description}
                     </p>
                   </div>
-                  <div className="mt-3 sm:mt-5 pt-2.5 sm:pt-4 border-t border-[#E2E8F0]">
+                  <div className="mt-3 sm:mt-5 pt-2.5 sm:pt-4 border-t border-[#E2E8F0] flex justify-center sm:justify-start">
                     <EnquireModalButton
                       source={`prop-type-${location.slug}-${pt.title.toLowerCase().replace(/\s+/g, '-')}`}
                       title={`Enquire: ${pt.title} in ${location.name}`}

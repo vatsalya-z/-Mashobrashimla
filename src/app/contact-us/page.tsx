@@ -279,8 +279,8 @@ export default function ContactUsPage() {
             <div className="lg:col-span-7 xl:col-span-8">
               <FadeInUp>
                 <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#E2E8F0] p-5 sm:p-10 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="mb-6 sm:mb-8 pb-5 border-b border-[#F1F5F9]">
-                    <span className="text-[#E07A2F] text-xs sm:text-sm font-bold uppercase tracking-wider inline-flex items-center gap-1.5 mb-2">
+                  <div className="mb-6 sm:mb-8 pb-5 border-b border-[#F1F5F9] text-center sm:text-left">
+                    <span className="text-[#E07A2F] text-xs sm:text-sm font-bold uppercase tracking-wider inline-flex items-center justify-center sm:justify-start gap-1.5 mb-2">
                       <CalendarCheck size={16} />
                       Direct Buyer Assistance
                     </span>
@@ -306,8 +306,8 @@ export default function ContactUsPage() {
               <FadeInUp delay={0.15}>
                 
                 {/* 1. Direct Specialist Support Card */}
-                <div className="bg-[#1E3A5F] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-md">
-                  <span className="text-[#E07A2F] text-xs font-bold uppercase tracking-wider block mb-2">
+                <div className="bg-[#1E3A5F] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-md text-center sm:text-left">
+                  <span className="text-[#E07A2F] text-xs font-bold uppercase tracking-wider block mb-2 text-center sm:text-left">
                     Priority Assistance
                   </span>
                   <h3

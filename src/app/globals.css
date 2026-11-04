@@ -44,3 +44,61 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--primary);
   border-radius: 3px;
 }
+
+/* ==========================================================================
+   Mobile Responsive Alignment (< 768px):
+   - Center all headings (h1, h2, h3, h4, h5, h6)
+   - Center all buttons and button-style CTAs
+   - Desktop mode (>= 768px) is 100% preserved and untouched
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  /* 1. All Headings Centered on Mobile */
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Flex headings and flex children inside headings (e.g. icon + text) */
+  h1.flex, h2.flex, h3.flex, h4.flex, h5.flex, h6.flex,
+  h1.inline-flex, h2.inline-flex, h3.inline-flex, h4.inline-flex, h5.inline-flex, h6.inline-flex {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* 2. All Buttons & Button-style CTAs Centered on Mobile */
+  /* Main interactive buttons (excluding mobile hamburger toggle, modal close X, and accordion rows) */
+  button:not([aria-label*="Close"]):not([aria-label*="close"]):not([aria-label*="menu"]):not([aria-controls="mobile-navigation-menu"]):not([aria-expanded]):not(.mobile-nav-toggle),
+  input[type="submit"],
+  input[type="button"],
+  a[class*="rounded"][class*="py-"],
+  a[class*="rounded-xl"][class*="px-"],
+  a[class*="rounded-lg"][class*="px-"],
+  a.btn,
+  .btn {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Standalone button elements: center horizontally within parent */
+  button:only-child:not([aria-label*="Close"]):not([aria-label*="close"]):not([aria-label*="menu"]):not([aria-controls="mobile-navigation-menu"]):not([aria-expanded]):not(.mobile-nav-toggle):not(.w-full):not([class*="w-full"]):not([class*="flex-1"]),
+  a[class*="rounded"][class*="py-"]:only-child:not(.w-full):not([class*="w-full"]):not([class*="flex-1"]):not([class*="rounded-full"][class*="w-"]) {
+    display: flex !important;
+    width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Full-width and submit buttons: centered contents */
+  button[type="submit"],
+  form button[type="submit"] {
+    justify-content: center !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+

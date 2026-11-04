@@ -104,3 +104,32 @@ export async function saveLeadToJSON(lead: LeadRecord): Promise<void> {
   }
 }
 
+export async function saveLeadToGoogleSheets(lead: LeadRecord): Promise<boolean> {
+  const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || process.env.GOOGLE_SHEETS_URL;
+  if (!webhookUrl) {
+    return false;
+  }
+
+  try {
+    const res = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(lead),
+      redirect: 'follow',
+    });
+
+    if (res.ok || res.status === 200 || res.status === 302) {
+      console.log('[GOOGLE_SHEETS] Lead successfully synced to Google Sheet.');
+      return true;
+    } else {
+      console.warn(`[GOOGLE_SHEETS] Webhook returned status ${res.status}`);
+      return false;
+    }
+  } catch (error) {
+    console.error('[GOOGLE_SHEETS_SYNC_ERROR]', error);
+    return false;
+  }
+}
+

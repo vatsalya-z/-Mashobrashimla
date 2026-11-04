@@ -20,8 +20,8 @@ export default function DisclaimerPage() {
 
       {/* HERO BANNER */}
       <section className="relative w-full bg-[#1E3A5F] py-14 sm:py-16">
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="mb-4">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 text-center sm:text-left">
+          <div className="mb-4 flex justify-center sm:justify-start">
             <Breadcrumb items={[{ label: 'Disclaimer' }]} />
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-white" style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}>

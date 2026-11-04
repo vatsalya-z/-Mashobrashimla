@@ -70,7 +70,7 @@ export default function EnquireNowPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-xl border border-[#E2E8F0] p-6 sm:p-8">
+              <div className="bg-white rounded-xl border border-[#E2E8F0] p-6 sm:p-8 text-center sm:text-left">
                 <h2
                   className="text-2xl sm:text-3xl font-bold text-[#172033] mb-2"
                   style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}
@@ -80,7 +80,9 @@ export default function EnquireNowPage() {
                 <p className="text-[#64748B] text-sm mb-8">
                   Fill in your details below and our property consultant will contact you within 24 hours.
                 </p>
-                <EnquiryForm source="enquire-now" />
+                <div className="text-left">
+                  <EnquiryForm source="enquire-now" />
+                </div>
               </div>
             </div>
 

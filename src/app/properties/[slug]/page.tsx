@@ -253,7 +253,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
             <div className="lg:col-span-2 space-y-12">
               {/* Architectural Story & Narrative */}
               <div>
-                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-2">
+                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-2 text-center sm:text-left">
                   Architectural Narrative
                 </span>
                 <h2
@@ -274,7 +274,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
               {/* Multi-Level Layout Concept */}
               <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-8">
-                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1">
+                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1 text-center sm:text-left">
                   Space Planning
                 </span>
                 <h3
@@ -319,7 +319,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
               {/* Premium Highlights Grid */}
               <div>
-                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1">
+                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1 text-center sm:text-left">
                   Signature Specifications
                 </span>
                 <h3
@@ -380,7 +380,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
               {/* Luxury Amenities Grid */}
               <div>
-                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1">
+                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1 text-center sm:text-left">
                   Community &amp; Villa Features
                 </span>
                 <h3
@@ -405,7 +405,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
               {/* Location & Travel Connectivity */}
               <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-8">
-                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1">
+                <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1 text-center sm:text-left">
                   Strategic Location
                 </span>
                 <h3
@@ -457,7 +457,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
               {/* Frequently Asked Questions */}
               {property.faqs && property.faqs.length > 0 && (
                 <div className="pt-4" id="faqs">
-                  <div className="mb-6">
+                  <div className="mb-6 text-center sm:text-left">
                     <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1">
                       Clear Factual Answers
                     </span>
@@ -484,20 +484,22 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                 <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 shadow-xl relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#1E3A5F] via-[#E07A2F] to-[#1E3A5F]" />
 
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#E07A2F] uppercase tracking-wider mb-2">
-                    <FaAward className="text-xs" />
-                    Direct Consultant Desk
-                  </span>
+                  <div className="text-center sm:text-left">
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#E07A2F] uppercase tracking-wider mb-2">
+                      <FaAward className="text-xs" />
+                      Direct Consultant Desk
+                    </span>
 
-                  <h3
-                    className="text-lg sm:text-xl font-bold text-[#172033] mb-1.5"
-                    style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}
-                  >
-                    Enquire for Pricing &amp; Brochure
-                  </h3>
-                  <p className="text-xs text-[#64748B] mb-6 leading-relaxed">
-                    Connect directly with our luxury mountain property specialists for verified floor plans, payment schedules, and private on-ground site visits.
-                  </p>
+                    <h3
+                      className="text-lg sm:text-xl font-bold text-[#172033] mb-1.5"
+                      style={{ fontFamily: 'var(--font-manrope, sans-serif)' }}
+                    >
+                      Enquire for Pricing &amp; Brochure
+                    </h3>
+                    <p className="text-xs text-[#64748B] mb-6 leading-relaxed">
+                      Connect directly with our luxury mountain property specialists for verified floor plans, payment schedules, and private on-ground site visits.
+                    </p>
+                  </div>
 
                   <EnquiryForm propertySlug={property.slug} source={`property-sidebar-${property.slug}`} compact />
 
@@ -560,7 +562,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
           {/* ─── 4. EXPLORE MORE PROPERTIES ────────────────────────── */}
           <div className="mt-20 pt-12 border-t border-[#E2E8F0]">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 text-center md:text-left">
               <div>
                 <span className="text-[#E07A2F] text-xs sm:text-sm font-semibold uppercase tracking-wider block mb-1">
                   More Mountain Enclaves
@@ -572,13 +574,15 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                   Explore Other Verified Residences
                 </h3>
               </div>
-              <Link
-                href="/properties"
-                className="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-[#1E3A5F] hover:text-[#E07A2F] transition-colors"
-              >
-                <span>View All Properties in Mashobra</span>
-                <FaArrowRight className="text-xs" />
-              </Link>
+              <div className="mt-4 md:mt-0 flex justify-center md:justify-start">
+                <Link
+                  href="/properties"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#1E3A5F] hover:text-[#E07A2F] transition-colors"
+                >
+                  <span>View All Properties in Mashobra</span>
+                  <FaArrowRight className="text-xs" />
+                </Link>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-6">

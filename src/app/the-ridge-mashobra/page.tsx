@@ -216,7 +216,7 @@ export default function TheRidgeMashobraPage() {
                 Designed for families seeking a peaceful retreat, an executive remote-working second home, or long-term wealth preservation, The Ridge Mashobra delivers the serenity of high-altitude forest solitude alongside dependable road access to Shimla’s urban conveniences just 13 km away.
               </p>
 
-              <div className="pt-2">
+              <div className="pt-2 text-center sm:text-left flex justify-center sm:justify-start">
                 <EnquireModalButton
                   source="the-ridge-mashobra-overview"
                   title="Request Master Layout Plan"
