@@ -165,7 +165,7 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto mb-10">
             <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src={websiteImages.locations.mashobraForest.src}
+                src={websiteImages.banners.projectPanorama.src}
                 alt={websiteImages.locations.mashobraForest.alt}
                 fill
                 className="object-cover hover:scale-103 transition-transform duration-700"

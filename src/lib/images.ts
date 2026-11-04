@@ -573,13 +573,13 @@ export const websiteImages = {
   // I. PANORAMIC BANNERS & FULL VIEWS
   banners: {
     projectPanorama: {
-      src: '/images/hoabl/house-of-abhinandan-lodha-shimla-banner-1.webp',
+      src: '/images/locations/kufri/kufri-luxury-chalet-06.webp',
       alt: 'Expansive Panoramic Mountain Vista of Mashobra Hills Estate',
       width: 1920,
       height: 700,
     },
     estateOverview: {
-      src: '/images/hoabl/house-of-abhinandan-lodha-shimla-banner-2.webp',
+      src: '/images/locations/mashobra/mashobra-mountain-cottage-05.webp',
       alt: 'Luxury Gated Mountain Residential Estate in Mashobra',
       width: 1920,
       height: 700,
