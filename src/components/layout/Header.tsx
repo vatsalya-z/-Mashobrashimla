@@ -6,36 +6,119 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { FaPhoneAlt, FaChevronDown, FaWhatsapp, FaArrowRight } from 'react-icons/fa';
+import { 
+  Building2, 
+  Sparkles, 
+  Gem, 
+  Home, 
+  Crown, 
+  Trees, 
+  Compass, 
+  Snowflake, 
+  MapPin, 
+  ArrowRight 
+} from 'lucide-react';
 import { useEnquiryModal } from '@/context/EnquiryModalContext';
 
 const PHONE_NUMBER = process.env.NEXT_PUBLIC_PHONE || '+91-9999995151';
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || '+919999995151';
 const WHATSAPP_MESSAGE = 'Hello, I am interested in luxury villas and properties at The Ridge Mashobra, Shimla. Please share brochure and details.';
 
-const navLinks = [
+export interface NavDropdownChild {
+  label: string;
+  href: string;
+  desc: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge?: string | null;
+}
+
+interface NavLinkItem {
+  label: string;
+  href: string;
+  children?: NavDropdownChild[];
+}
+
+const navLinks: NavLinkItem[] = [
   { label: 'Home', href: '/' },
   { label: 'The Ridge Mashobra', href: '/the-ridge-mashobra' },
   {
     label: 'Properties',
     href: '/properties',
     children: [
-      { label: 'All Properties', href: '/properties' },
-      { label: 'Luxury Villas Mashobra', href: '/luxury-villas-mashobra' },
-      { label: '3 BHK Villas', href: '/3-bhk-villas-mashobra' },
-      { label: '4 BHK Villas', href: '/4-bhk-villas-mashobra' },
-      { label: 'The Ridge Mashobra', href: '/the-ridge-mashobra' },
-      { label: 'Holiday Homes', href: '/holiday-homes-himachal' },
+      {
+        label: 'All Properties',
+        href: '/properties',
+        desc: 'Explore complete portfolio & pricing tiers',
+        icon: Building2,
+      },
+      {
+        label: 'The Ridge Mashobra',
+        href: '/the-ridge-mashobra',
+        desc: '150-acre gated luxury mountain estate at 2,100 m',
+        icon: Sparkles,
+        badge: 'Signature',
+      },
+      {
+        label: 'Luxury Villas Mashobra',
+        href: '/luxury-villas-mashobra',
+        desc: 'High-altitude residences with Himalayan vistas',
+        icon: Gem,
+      },
+      {
+        label: '3 BHK Villas',
+        href: '/3-bhk-villas-mashobra',
+        desc: 'Balanced tri-bedroom homes with valley balconies',
+        icon: Home,
+      },
+      {
+        label: '4 BHK Villas',
+        href: '/4-bhk-villas-mashobra',
+        desc: 'Grand multi-tier chalets with panoramic decks',
+        icon: Crown,
+      },
+      {
+        label: 'Holiday Homes',
+        href: '/holiday-homes-himachal',
+        desc: 'Tranquil family vacation retreats in cedar woods',
+        icon: Trees,
+      },
     ],
   },
   {
     label: 'Locations',
     href: '/locations',
     children: [
-      { label: 'All Locations', href: '/locations' },
-      { label: 'Mashobra', href: '/locations/mashobra' },
-      { label: 'Shimla', href: '/locations/shimla' },
-      { label: 'Kufri', href: '/locations/kufri' },
-      { label: 'Naldehra', href: '/locations/naldehra' },
+      {
+        label: 'All Locations',
+        href: '/locations',
+        desc: 'Compare elevation, climate, and lifestyle',
+        icon: Compass,
+      },
+      {
+        label: 'Mashobra',
+        href: '/locations/mashobra',
+        desc: '2,146 m · Ancient cedar reserves & clean air (AQI < 30)',
+        icon: Trees,
+        badge: 'Prime',
+      },
+      {
+        label: 'Shimla',
+        href: '/locations/shimla',
+        desc: '2,206 m · Capital healthcare, schools & connectivity',
+        icon: Building2,
+      },
+      {
+        label: 'Kufri',
+        href: '/locations/kufri',
+        desc: '2,622 m · Alpine winter snowfall & mountain ridges',
+        icon: Snowflake,
+      },
+      {
+        label: 'Naldehra',
+        href: '/locations/naldehra',
+        desc: '2,044 m · Historic British-era golf course sanctuary',
+        icon: MapPin,
+      },
     ],
   },
   { label: 'About Us', href: '/about-us' },
@@ -51,10 +134,29 @@ export default function Header() {
   const [expandedMobileSubmenu, setExpandedMobileSubmenu] = useState<string | null>(null);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const shouldReduceMotion = useReducedMotion();
 
   const cleanWaNumber = WHATSAPP_NUMBER.replace(/\D/g, '');
   const waUrl = `https://wa.me/${cleanWaNumber}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
+  const handleMouseEnter = (label: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 180);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -64,6 +166,7 @@ export default function Header() {
 
   // Close menus on route changes
   useEffect(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setMobileOpen(false);
     setActiveDropdown(null);
   }, [pathname]);
@@ -132,20 +235,28 @@ export default function Header() {
               {navLinks.map((link) => {
                 const active = isActive(link.href);
                 return (
-                  <div key={link.href} className="relative">
+                  <div
+                    key={link.href}
+                    className="relative"
+                    onMouseEnter={() => link.children && handleMouseEnter(link.label)}
+                    onMouseLeave={() => link.children && handleMouseLeave()}
+                  >
                     {link.children ? (
                       <button
+                        type="button"
                         onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
-                        className={`relative flex items-center gap-1 xl:gap-1.5 px-2.5 xl:px-3 py-2 rounded text-xs xl:text-sm font-medium transition-colors ${
-                          active
-                            ? 'text-[#1E3A5F] font-semibold'
-                            : 'text-[#172033] hover:text-[#1E3A5F]'
+                        className={`relative flex items-center gap-1 xl:gap-1.5 px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors cursor-pointer ${
+                          active || activeDropdown === link.label
+                            ? 'text-[#1E3A5F] font-semibold bg-[#F1F5F9]/80'
+                            : 'text-[#172033] hover:text-[#1E3A5F] hover:bg-[#F8FAFC]'
                         }`}
+                        aria-expanded={activeDropdown === link.label}
+                        aria-haspopup="true"
                       >
                         <span>{link.label}</span>
                         <FaChevronDown
                           className={`text-[9px] xl:text-[10px] transition-transform duration-200 ${
-                            activeDropdown === link.label ? 'rotate-180 text-[#E07A2F]' : ''
+                            activeDropdown === link.label ? 'rotate-180 text-[#E07A2F]' : 'text-[#94A3B8]'
                           }`}
                         />
                         {active && (
@@ -159,10 +270,10 @@ export default function Header() {
                     ) : (
                       <Link
                         href={link.href}
-                        className={`relative px-2.5 xl:px-3 py-2 rounded text-xs xl:text-sm font-medium transition-colors ${
+                        className={`relative px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors ${
                           active
                             ? 'text-[#1E3A5F] font-semibold'
-                            : 'text-[#172033] hover:text-[#1E3A5F]'
+                            : 'text-[#172033] hover:text-[#1E3A5F] hover:bg-[#F8FAFC]'
                         }`}
                       >
                         <span>{link.label}</span>
@@ -176,25 +287,132 @@ export default function Header() {
                       </Link>
                     )}
 
-                    {/* Animated Dropdown */}
+                    {/* Animated Premium Dropdown */}
                     <AnimatePresence>
                       {link.children && activeDropdown === link.label && (
                         <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                          initial={{ opacity: 0, y: 8, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                          transition={{ duration: 0.2, ease: 'easeOut' }}
-                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-[#E2E8F0] py-2 z-50 overflow-hidden"
+                          exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                          transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                          className={`absolute top-full pt-2 z-50 w-[380px] sm:w-[400px] ${
+                            link.label === 'Locations' ? 'left-[-30px]' : 'left-0'
+                          }`}
+                          onMouseEnter={() => {
+                            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                          }}
+                          onMouseLeave={handleMouseLeave}
                         >
-                          {link.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              className="block px-4 py-2.5 text-sm text-[#172033] hover:bg-[#F1F5F9] hover:text-[#1E3A5F] transition-colors"
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
+                          <div className="bg-white/98 backdrop-blur-xl rounded-2xl shadow-[0_22px_55px_-12px_rgba(15,23,42,0.18)] border border-[#E2E8F0] p-2.5 overflow-hidden">
+                            {/* Dropdown Category Header */}
+                            <div className="px-3 py-2 flex items-center justify-between border-b border-[#F1F5F9] mb-1.5">
+                              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#94A3B8]">
+                                {link.label === 'Properties' ? 'Curated Mountain Portfolio' : 'Shimla Hills Micro-Markets'}
+                              </span>
+                              <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                                link.label === 'Properties' 
+                                  ? 'text-[#E07A2F] bg-[#E07A2F]/10' 
+                                  : 'text-[#1E3A5F] bg-[#1E3A5F]/10'
+                              }`}>
+                                {link.label === 'Properties' ? 'Mashobra & Shimla' : 'Himachal Pradesh'}
+                              </span>
+                            </div>
+
+                            {/* Dropdown Links List */}
+                            <div className="space-y-1">
+                              {link.children.map((child) => {
+                                const Icon = child.icon;
+                                const isChildActive = pathname === child.href;
+                                return (
+                                  <Link
+                                    key={child.href}
+                                    href={child.href}
+                                    onClick={() => setActiveDropdown(null)}
+                                    className={`group flex items-start gap-3 p-2.5 rounded-xl transition-all relative border ${
+                                      isChildActive
+                                        ? 'bg-[#1E3A5F]/5 border-[#1E3A5F]/15'
+                                        : 'border-transparent hover:bg-[#F8FAFC] hover:border-[#E2E8F0]/70'
+                                    }`}
+                                  >
+                                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors shadow-2xs ${
+                                      isChildActive
+                                        ? 'bg-[#1E3A5F] text-white'
+                                        : 'bg-[#F1F5F9] text-[#1E3A5F] group-hover:bg-[#E07A2F] group-hover:text-white'
+                                    }`}>
+                                      <Icon className="w-4 h-4 transition-transform group-hover:scale-110" />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <div className="flex items-center gap-1.5">
+                                        <span className={`text-[13px] font-bold transition-colors leading-tight ${
+                                          isChildActive
+                                            ? 'text-[#1E3A5F]'
+                                            : 'text-[#172033] group-hover:text-[#1E3A5F]'
+                                        }`}>
+                                          {child.label}
+                                        </span>
+                                        {child.badge && (
+                                          <span className="text-[9px] font-extrabold uppercase tracking-wide bg-[#E07A2F]/15 text-[#E07A2F] px-1.5 py-0.5 rounded-md leading-none">
+                                            {child.badge}
+                                          </span>
+                                        )}
+                                      </div>
+                                      <p className="text-[11px] text-[#64748B] group-hover:text-[#475569] leading-snug line-clamp-1 mt-0.5">
+                                        {child.desc}
+                                      </p>
+                                    </div>
+                                    <ArrowRight className="w-3.5 h-3.5 text-[#CBD5E1] group-hover:text-[#E07A2F] group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100 self-center flex-shrink-0" />
+                                  </Link>
+                                );
+                              })}
+                            </div>
+
+                            {/* Dropdown Action Footer */}
+                            <div className="mt-1.5 pt-2 border-t border-[#F1F5F9] px-2 pb-1">
+                              {link.label === 'Properties' ? (
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setActiveDropdown(null);
+                                    openEnquiryModal({
+                                      source: 'header-nav-properties',
+                                      title: 'Bespoke Property Inquiry',
+                                      subtitle: 'Speak with our Mashobra property specialist for floor plans and pricing.',
+                                    });
+                                  }}
+                                  className="w-full flex items-center justify-between text-[11px] text-[#1E3A5F] font-semibold hover:text-[#E07A2F] p-1.5 rounded-lg hover:bg-[#1E3A5F]/5 transition-colors cursor-pointer"
+                                >
+                                  <span className="flex items-center gap-1.5">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#E07A2F]" />
+                                    Looking for custom configurations?
+                                  </span>
+                                  <span className="inline-flex items-center gap-1 font-bold">
+                                    Consult Desk &rarr;
+                                  </span>
+                                </button>
+                              ) : (
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setActiveDropdown(null);
+                                    openEnquiryModal({
+                                      source: 'header-nav-locations',
+                                      title: 'Private Site Inspection',
+                                      subtitle: 'Schedule a tailored reconnaissance visit to Mashobra, Shimla, Kufri or Naldehra.',
+                                    });
+                                  }}
+                                  className="w-full flex items-center justify-between text-[11px] text-[#1E3A5F] font-semibold hover:text-[#E07A2F] p-1.5 rounded-lg hover:bg-[#1E3A5F]/5 transition-colors cursor-pointer"
+                                >
+                                  <span className="flex items-center gap-1.5">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#E07A2F]" />
+                                    Planning an on-ground tour?
+                                  </span>
+                                  <span className="inline-flex items-center gap-1 font-bold">
+                                    Schedule Visit &rarr;
+                                  </span>
+                                </button>
+                              )}
+                            </div>
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -404,24 +622,40 @@ export default function Header() {
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.2, ease: 'easeInOut' }}
-                                className="overflow-hidden bg-[#F8FAFC] rounded-lg mt-1 ml-3 border-l-2 border-[#E07A2F]/40"
+                                className="overflow-hidden bg-[#F8FAFC] rounded-xl mt-1.5 ml-2 border border-[#E2E8F0]/70"
                               >
-                                <div className="py-1.5 pl-3 pr-2 space-y-0.5">
+                                <div className="py-2 px-2 space-y-1">
                                   {link.children!.map((child) => {
                                     const childActive = pathname === child.href;
+                                    const Icon = child.icon;
                                     return (
                                       <Link
                                         key={child.href}
                                         href={child.href}
                                         onClick={() => setMobileOpen(false)}
-                                        className={`block py-2 px-2.5 rounded-md text-xs sm:text-sm transition-colors ${
+                                        className={`flex items-center gap-2.5 p-2 rounded-lg transition-colors ${
                                           childActive
                                             ? 'text-[#E07A2F] font-semibold bg-white shadow-xs'
-                                            : 'text-[#64748B] hover:text-[#1E3A5F] hover:bg-white/60'
+                                            : 'text-[#64748B] hover:text-[#1E3A5F] hover:bg-white/80'
                                         }`}
                                         style={{ fontFamily: 'var(--font-inter, sans-serif)' }}
                                       >
-                                        {child.label}
+                                        <span className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 text-xs ${
+                                          childActive ? 'bg-[#E07A2F]/15 text-[#E07A2F]' : 'bg-[#1E3A5F]/5 text-[#1E3A5F]'
+                                        }`}>
+                                          <Icon className="w-3.5 h-3.5" />
+                                        </span>
+                                        <div className="flex-1 min-w-0">
+                                          <div className="flex items-center gap-1.5">
+                                            <span className="text-xs font-semibold text-[#172033]">{child.label}</span>
+                                            {child.badge && (
+                                              <span className="text-[8px] font-bold uppercase tracking-wide bg-[#E07A2F]/15 text-[#E07A2F] px-1.5 py-0.2 rounded">
+                                                {child.badge}
+                                              </span>
+                                            )}
+                                          </div>
+                                          <p className="text-[10px] text-[#94A3B8] truncate">{child.desc}</p>
+                                        </div>
                                       </Link>
                                     );
                                   })}
